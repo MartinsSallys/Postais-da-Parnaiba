@@ -4,7 +4,7 @@ body {
     padding-top: 06%;
     margin: 0;
     width: 100%;
-   
+
 }
 nav {
     margin-top: 10px
@@ -22,6 +22,7 @@ nav a:hover{
 }
 .galeria {
     padding: 40px;
+
 }
 
 .fotos {
@@ -32,8 +33,10 @@ nav a:hover{
 .foto img {
     width: 500px;
     height: 300px;
+
 } 
 .container {
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,4 +45,42 @@ nav a:hover{
 }
 header {
     margin-bottom: 0;
+}
+/* Versão para Celular (Mobile) */
+@media screen and (max-width: 768px) {
+    body {
+        padding-top: -10%; /* Aumenta um pouco o respiro no topo */
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column; /* Links um embaixo do outro */
+        align-items: center;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 5px 0;
+        font-size: 16px; /* Fonte levemente menor para caber melhor */
+    }
+
+    .fotos {
+        flex-direction: column; /* Empilha as fotos verticalmente */
+        align-items: center;
+        gap: 20px;
+    }
+
+    .foto img {
+        width: 100%;     /* A imagem ocupa toda a largura disponível */
+        max-width: 90vw; /* Garante que não encoste nas bordas do aparelho */
+        height: auto;    /* Mantém a proporção da imagem sem achatar */
+    }
+
+    .galeria {
+        padding: 20px; /* Reduz o padding para ganhar espaço interno */
+    }
+
+    .container {
+        padding: 20px;
+    }
 }

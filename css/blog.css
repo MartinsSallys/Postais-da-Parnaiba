@@ -60,3 +60,36 @@ color:#8b5e3c;
 font-weight:bold;
 text-decoration:none;
 }
+@media screen and (max-width: 768px) {
+    .blog {
+        padding: 60px 15px; /* Reduz o padding exagerado de 120px */
+        margin-top: 0;      /* Remove o margin negativo para evitar sobreposição */
+    }
+
+    .grid-blog {
+        grid-template-columns: 1fr; /* Muda de 3 colunas para apenas 1 */
+        gap: 25px;                 /* Espaço confortável entre os cards */
+        margin-top: 20px;
+    }
+
+    .post-card {
+        max-width: 100%;           /* Garante que o card use a largura disponível */
+        margin: 0 auto;            /* Centraliza o card */
+    }
+
+    .post-card:hover {
+        transform: none;           /* Desativa o efeito de subir no hover (melhor para touch) */
+    }
+
+    .post-card h3 {
+        font-size: 18px;           /* Ajuste leve no título do post */
+    }
+
+    .post-card p {
+        font-size: 14px;           /* Melhora a leitura em telas menores */
+    }
+
+    .post-card a {
+        padding: 10px;             /* Aumenta a área de clique do "Leia mais" */
+    }
+}

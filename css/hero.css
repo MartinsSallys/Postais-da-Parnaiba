@@ -42,3 +42,32 @@
     background:#ff6200;
     transform: translateY(-2px);
 }
+@media screen and (max-width: 768px) {
+    .hero {
+        height: 80vh; /* Reduzi um pouco a altura para sobrar espaço para o conteúdo abaixo */
+        position: relative; /* Garante que o texto se baseie na hero */
+        overflow: hidden;
+    }
+
+    .hero-text {
+        width: 90%; /* Ocupa quase toda a largura */
+        left: 50%; /* Move para o centro */
+        top: 70%; /* Ajusta a altura para não ficar colado no topo ou fundo */
+        transform: translate(-50%, -50%); /* Centraliza perfeitamente */
+        text-align: center; /* Centraliza o texto e o botão */
+        padding: 0 10px;
+    }
+
+    .hero-text h2 {
+        font-size: 32px; /* Diminui o título para não quebrar em muitas linhas */
+        margin-top: 0;
+        line-height: 1.2;
+    }
+
+    .btn {
+        margin-top: 20px; /* Mais espaço para o polegar clicar */
+        width: auto;
+        padding: 15px 30px; /* Botão ligeiramente maior para facilitar o toque */
+        font-size: 18px;
+    }
+}

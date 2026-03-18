@@ -8,3 +8,16 @@ footer {
     width: 100%;
 
 }
+footer {
+    padding: 40px 20px; /* Aumenta o respiro vertical e protege as laterais */
+    margin-top: 20px;   /* Reduz um pouco a margem superior */
+    font-size: 14px;    /* Ajuste leve na fonte para legibilidade */
+}
+
+/* Caso você venha a ter links ou ícones no footer futuramente */
+footer a {
+    display: inline-block;
+    margin: 10px;
+    color: #8b5e3c; /* Cor que combina com seus botões */
+    text-decoration: none;
+}
