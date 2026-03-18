@@ -36,38 +36,3 @@ header.shrink {
 header.shrink h1 {
     font-size: 20px
 }
-@media screen and (max-width: 768px) {
-    header {
-        padding: 10px 15px; /* Reduzi de 40px para 15px para ganhar espaço nas laterais */
-        flex-direction: column; /* Empilha o Logo/Título e o Menu */
-        gap: 10px; /* Espaço entre o título e os links */
-    }
-
-    /* Ajuste do tamanho do título/logo no mobile */
-    header h1 {
-        font-size: 1.5rem; 
-        margin: 0;
-    }
-
-    nav {
-        display: flex;
-        flex-wrap: wrap; /* Permite que os links quebrem linha se forem muitos */
-        justify-content: center;
-        margin-top: 5px;
-    }
-
-    nav a {
-        margin: 5px 10px; /* Espaçamento mais equilibrado para o polegar clicar */
-        font-size: 14px;
-        margin-left: 0; /* Remove o margin-left fixo de 30px do desktop */
-    }
-
-    /* Ajuste para a função de encolher (shrink) no mobile */
-    header.shrink {
-        padding: 5px 0;
-    }
-
-    header.shrink h1 {
-        font-size: 18px;
-    }
-}
