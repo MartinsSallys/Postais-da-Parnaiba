@@ -21,9 +21,9 @@
 .hero-text h2{
     color: white;
     text-shadow: 2px 2px 10px rgba(0, 0,0,0,8);
-    font-size: 48px;
+    font-size: 50px;
     font-family: 'Playfair Display', serif;
-    margin-top: -10%;
+    margin-top: -12%;
 }
 
 .btn{

@@ -1,17 +1,17 @@
 body {
     flex-direction: column;
     font-family: 'Playfair Display', serif;
-    padding-top: 06%;
+    padding-top: 80px;
     margin: 0;
     width: 100%;
-   
+
 }
 nav {
     margin-top: 10px
 }
 nav a {
    color:whitesmoke;
-    margin:0 20px;
+    margin: 20px;
     font-size:18px;
     letter-spacing: 2px;
     transition:0.5s;
@@ -41,5 +41,5 @@ nav a:hover{
     padding: 40px;
 }
 header {
-    margin-bottom: 0;
+    margin-bottom: 2px;
 }

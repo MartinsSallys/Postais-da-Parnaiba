@@ -8,11 +8,11 @@ header {
     transition:0.3s;
     z-index: 1000;
     color: white;
-    padding: 10px 40px;
-    border-bottom: 1px solid #c9a646;
+    padding: 15px ;
+    height: 80px;
     justify-content: space-between;
     display: flex;
-    box-shadow: 0px 5px #8b3c00;
+    box-shadow: 0px 5px #7a7a7a94;
     align-items: center;
     
 }
@@ -31,8 +31,15 @@ nav a:hover{
 }
 
 header.shrink {
-    padding: 10px 0;}
+    padding: 100px 10;}
     
 header.shrink h1 {
-    font-size: 20px
+    font-size: 2.5 rem;
+}
+.logo {
+  text-decoration: none;
+  color: inherit;
+}
+.logo:visited {
+  color: inherit;
 }

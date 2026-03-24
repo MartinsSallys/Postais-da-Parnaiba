@@ -5,7 +5,7 @@ box-sizing:border-box;
 }
 .slider-container{
 width:100%;
-height: 70vh;
+height: 0vh;
 overflow:hidden;
 position:relative;
 }
@@ -13,7 +13,7 @@ position:relative;
 margin:auto;
 overflow:hidden;
 position:relative;
-margin-top: -2%;
+
 }
 
 .slider input{
@@ -41,10 +41,8 @@ width: 1000px;
 height: 80vh;
 object-fit:contain;
 filter: brightness(75%) contrast(120%);
-border: 2px solid #000000;
 border-width: auto 2px;
 border-top: #000000 2px;
-background-color: #ffffff72;
 display: block;
 margin: auto;;
 }
@@ -95,14 +93,14 @@ transition:0.3s;
 .navegacao label:hover{
 background:#FFD700;
 border-color:#FFD700;
-transform:scale(1.2);
+transform:scale(1.0);
 }
 .overlay{
 position:absolute;
 transition: opacity 0.5s;
-transform: scale(1.2) translateX(-10px);
+transform: scale(1) translateX(10px);
 top:0;
-left:0;
+left:-1%;
 width:100%;
 height:100%;
 background:linear-gradient(

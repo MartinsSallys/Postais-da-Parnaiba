@@ -3,10 +3,10 @@ display:grid;
 grid-template-columns:1fr 1fr;
 gap:40px;
 align-items:center;
-margin-top:40px;
+max-width: 1000px;
 }
 .autor-imagem img{
-width: 85%;
+width: 90%;
 border-radius:8px;
 filter:grayscale(100%);
 transition:0.4s;
@@ -21,7 +21,7 @@ padding: 120px 20px;
 background: #f5f1e8;
 padding: 80px 20px;
 background-size: cover;    
-    background-repeat:no-repeat;;
+    background-repeat:no-repeat;
 }
 .linha-autor{
 width:70px;
