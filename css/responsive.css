@@ -1,25 +1,38 @@
-@media (max-width: 1024px) {
-
-.hero h1 {
-font-size: 32px;
-}
-
-}
-
-@media (max-width: 768px) {
-
+@media (max-width: 768px) {    
 header {
 flex-direction: column;
 align-items: center;
+padding: 0 20px;
+height: 70px;
 }
 
-nav ul {
+nav {
+width: 100%;
+}
+
+
+nav ul{
 flex-direction: column;
 gap: 10px;
+padding: 10px 0;
+margin-left: 10px;
+font-size: 14px;
+}
+@media (max-width: 480px) {
+    .logo {
+        font-size: 22px;
+    }
+    
+    nav a {
+        margin-left: 8px;
+        font-size: 12px;
+    }
 }
 
 .hero h1 {
 font-size: 28px;
+padding: auto;
+width: 100px 80px;
 }
 
 .hero p {
@@ -29,21 +42,6 @@ font-size: 16px;
 section {
 padding: 60px 20px;
 }
-
-}
-
-@media (max-width: 480px) {
-
-.hero h1 {
-font-size: 24px;
-}
-
-.hero p {
-font-size: 14px;
-}
-
-}
-@media (max-width: 768px) {
 
 .blog {
 flex-direction: column;
