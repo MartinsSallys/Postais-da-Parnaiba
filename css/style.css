@@ -1,3 +1,6 @@
+* {
+box-sizing: border-box;
+}
 body {
     flex-direction: column;
     font-family: 'Playfair Display', serif;
@@ -21,7 +24,7 @@ nav a:hover{
     text-decoration:underline;
 }
 .galeria {
-    padding: 40px;
+    padding: 80px 20px;
 }
 
 .fotos {
@@ -30,16 +33,78 @@ nav a:hover{
 }
 
 .foto img {
-    width: 500px;
-    height: 300px;
+    max-width: 100%;
+    height: auto;
 } 
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    padding: 40px;
+    padding: 80px 20px;
 }
+/* ==================== */
+/* RESPONSIVIDADE */
+/* ==================== */
+
+@media (max-width: 1024px) {
+
+.hero h1 {
+font-size: 32px;
+}
+
+}
+
+@media (max-width: 768px) {
+
 header {
-    margin-bottom: 2px;
+flex-direction: column;
+align-items: center;
+}
+
+nav ul {
+flex-direction: column;
+gap: 10px;
+}
+
+.hero h1 {
+font-size: 28px;
+}
+
+.hero p {
+font-size: 16px;
+}
+
+section {
+padding: 60px 20px;
+}
+
+}
+
+@media (max-width: 480px) {
+
+.hero h1 {
+font-size: 24px;
+}
+
+.hero p {
+font-size: 14px;
+}
+
+}
+@media (max-width: 768px) {
+
+.blog {
+flex-direction: column;
+}
+
+.container {
+flex-direction: column;
+}
+
+img {
+width: 100%;
+height: auto;
+}
+
 }

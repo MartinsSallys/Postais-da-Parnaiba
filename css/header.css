@@ -1,3 +1,6 @@
+*{
+    transition: 0.3s ease;
+}
 header {
     position: fixed;
     top: 0;
@@ -14,19 +17,25 @@ header {
     display: flex;
     box-shadow: 0px 5px #7a7a7a94;
     align-items: center;
+    max-width: 100%;
+    min-width: 100%;
     
 }
-nav a{
+nav a{  
     text-decoration:none;
     color:#aeadad;
     margin-left:30px;
     font-weight:500;
     letter-spacing: 1px;
+    max-width: 100%;
+    min-width: 100%;
+    flex-wrap: wrap;
 
 }
 
 nav a:hover{
-    color:#8b5e3c;
+    color:#8B6B4A;
+    transition: 0.3s;
     
 }
 
@@ -39,6 +48,8 @@ header.shrink h1 {
 .logo {
   text-decoration: none;
   color: inherit;
+  font-size: 46px;
+
 }
 .logo:visited {
   color: inherit;
