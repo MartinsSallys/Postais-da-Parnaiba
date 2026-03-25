@@ -2,7 +2,6 @@
 * {
     margin: 0;
     padding: 0;
-    box-box-sizing: border-box;
     transition: 0.3s ease;
 }
 
@@ -45,6 +44,9 @@ nav a {
 
 nav a:hover {
     color: #8B6B4A;
+    background:#FFD700;
+    border-color:#FFD700;
+    transform:scale(1.0);
 }
 
 
@@ -58,9 +60,10 @@ header.shrink {
     header {
         padding: 0 20px;
         height: 70px;
+        flex-direction: column
     }
 
-    /* */
+    
     nav {
         gap: 10px;
     }
@@ -79,8 +82,8 @@ header.shrink {
     }
     
     nav a {
-        margin-top: auto;
+        margin-top:auto;
         margin-left: 8px;
-        font-size: 12px;
+        font-size: 14px;
     }
-}
+} 
