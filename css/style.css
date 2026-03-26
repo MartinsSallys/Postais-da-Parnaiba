@@ -70,7 +70,7 @@ p {
 
 .container,
 .container-blog,
-.conteiner-livro,
+.container-livro,
 .container-autor {
     width: min(100% - 40px, var(--layout-width));
     margin: 0 auto;
