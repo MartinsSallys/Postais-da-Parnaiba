@@ -1,6 +1,7 @@
 .livro-page {
     background:
         linear-gradient(180deg, rgba(244, 238, 229, 0.98) 0%, rgba(227, 220, 209, 0.94) 100%);
+    overflow-x: hidden;
 }
 
 .livro-hero {
@@ -23,8 +24,14 @@
     padding: 28px 28px 0 0;
 }
 
+.livro-hero-media,
+.livro-author-media {
+    width: 100%;
+}
+
 .livro-cover {
     width: 100%;
+    height: auto;
     border-radius: 18px;
     box-shadow: 0 22px 40px rgba(39, 27, 16, 0.18);
 }
@@ -140,6 +147,10 @@
     margin-bottom: 12px;
 }
 
+.livro-highlight-card p {
+    font-size: 0.98rem;
+}
+
 .livro-preview-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -149,6 +160,7 @@
 .livro-preview-grid img,
 .livro-author-media img {
     width: 100%;
+    height: auto;
     border-radius: 18px;
     box-shadow: 0 16px 30px rgba(40, 28, 18, 0.16);
 }
