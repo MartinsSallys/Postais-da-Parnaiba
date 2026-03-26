@@ -40,12 +40,15 @@
     color: #d3d3d3;
     font-size: 1rem;
     letter-spacing: 0.04em;
-    transition: color var(--transition-base), transform var(--transition-base);
+    text-underline-offset: 0.28em;
+    transition: color var(--transition-base), transform var(--transition-base), text-decoration-color var(--transition-base);
 }
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
     color: var(--color-primary);
+    text-decoration: underline;
+    text-decoration-color: currentColor;
 }
 
 .site-nav a[aria-current="page"] {
