@@ -6,6 +6,11 @@
     background: #000000;
 }
 
+.slider:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 4px;
+}
+
 .slider input {
     display: none;
 }
@@ -86,6 +91,7 @@
     gap: 12px;
 }
 
+.slider__dot,
 .navegacao label {
     width: 38px;
     height: 5px;
@@ -94,12 +100,19 @@
     border-radius: 999px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.24);
     cursor: pointer;
-    transition: background var(--transition-base), width var(--transition-base), transform var(--transition-base);
+    transition:
+        background var(--transition-base),
+        width var(--transition-base),
+        transform var(--transition-base),
+        box-shadow var(--transition-base);
 }
 
+.slider__dot:hover,
+.slider__dot:focus-visible,
 .navegacao label:hover {
     background: rgba(255, 248, 236, 0.56);
-    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
+    transform: translateY(-1px) scale(1.04);
 }
 
 #s1:checked ~ .navegacao label[for="s1"],
@@ -109,4 +122,5 @@
 #s5:checked ~ .navegacao label[for="s5"] {
     width: 56px;
     background: #d6b07b;
+    box-shadow: 0 6px 18px rgba(214, 176, 123, 0.28);
 }
