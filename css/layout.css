@@ -1,0 +1,50 @@
+.l-container,
+.container,
+.container-blog,
+.container-livro,
+.container-autor {
+    width: min(100% - 40px, var(--layout-width));
+    margin-inline: auto;
+}
+
+.l-container--narrow {
+    width: min(100% - 40px, var(--layout-width-narrow));
+    margin-inline: auto;
+}
+
+.l-section {
+    padding-block: var(--spacing-3xl);
+}
+
+.l-grid {
+    display: grid;
+    gap: var(--spacing-xl);
+}
+
+.l-grid--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.l-grid--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.l-grid--4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.l-grid--5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.l-stack {
+    display: flex;
+    flex-direction: column;
+}
+
+.l-cluster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    align-items: center;
+}

@@ -26,13 +26,3 @@
         box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
     }
 }
-
-.btn-galeria {
-    margin-top: 40px;
-    min-width: 240px;
-}
-
-.btn-galeria:hover,
-.btn-galeria:focus-visible {
-    transform: translateY(-3px);
-}
