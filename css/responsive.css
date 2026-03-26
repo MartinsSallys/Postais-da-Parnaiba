@@ -3,6 +3,14 @@
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     }
 
+    .postal-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .postal-gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .slider {
         height: clamp(380px, 62vh, 560px);
     }
@@ -35,6 +43,14 @@
     .sobre-gride-autor,
     .grid-livro,
     .grid-blog {
+        grid-template-columns: 1fr;
+    }
+
+    .postal-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .postal-gallery-grid {
         grid-template-columns: 1fr;
     }
 
@@ -94,7 +110,10 @@
     .historia,
     .blog,
     .livro,
-    .Autor {
+    .Autor,
+    .postal-hero,
+    .postal-content,
+    .postais-home {
         padding-inline: 15px;
     }
 
@@ -102,11 +121,16 @@
         grid-template-columns: 1fr;
     }
 
+    .postal-grid {
+        grid-template-columns: 1fr;
+    }
+
     .grid-galeria img {
         height: 250px;
     }
 
-    .btn-galeria {
+    .btn-galeria,
+    .postal-card-link {
         width: 100%;
         text-align: center;
     }

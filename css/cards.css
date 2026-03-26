@@ -1,0 +1,83 @@
+.postais-home {
+    padding: 104px 5% 92px;
+    background:
+        linear-gradient(180deg, rgba(241, 235, 223, 0.9) 0%, rgba(231, 225, 214, 0.92) 100%);
+}
+
+.postais-intro,
+.galeria-intro {
+    width: min(100%, 700px);
+    margin: 0 auto 36px;
+    text-align: center;
+    color: var(--color-muted);
+    font-size: 1.02rem;
+}
+
+.postal-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+.postal-card {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, rgba(255, 251, 244, 0.98) 0%, rgba(247, 240, 228, 0.98) 100%);
+    border: 1px solid rgba(76, 58, 40, 0.12);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 16px 28px rgba(53, 40, 27, 0.12);
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.postal-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 34px rgba(53, 40, 27, 0.16);
+    border-color: rgba(76, 58, 40, 0.22);
+}
+
+.postal-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: #d9d0c2;
+}
+
+.postal-card-media {
+    display: block;
+}
+
+.postal-card-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 18px 22px;
+    text-align: center;
+}
+
+.postal-card-content h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.postal-card-title {
+    color: inherit;
+    text-decoration: none;
+}
+
+.postal-card-title:hover,
+.postal-card-title:focus-visible {
+    color: var(--color-primary-strong);
+}
+
+.postal-card-content p {
+    margin-bottom: 20px;
+    color: var(--color-muted);
+    font-size: 0.95rem;
+}
+
+.postal-card-link {
+    margin-top: auto;
+}
