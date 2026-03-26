@@ -3,80 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Postais da Parnahyba</title>
-   <link rel="stylesheet" href="../css/style.css">
+    <meta name="description" content="Blog do projeto Postais da Parnaíba com histórias, memórias e destaques do acervo visual.">
+    <title>Blog | Postais da Parnaíba</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/slider.css">
+    <link rel="stylesheet" href="../css/blog.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/hero.css">
-      <link rel="stylesheet" href="../css/blog.css">
-      <link href="stylesheet" href="../css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="../css/responsive.css">
 </head>
+<body>
+    <header class="site-header">
+        <h1 class="site-title">
+            <a href="../index.html" class="logo">Postais da Parnaíba</a>
+        </h1>
 
-<body>  
-<header>
-   <h1>
-    <a href="../index.html" class="logo">Postais da Parnaiba</a>
-</h1>
-    <nav>
-     <a href="../index.html">Home</a>
-<a href="galeria.html">Galeria</a>
-<a href="livro.html">Livro</a>
-<a href="blog.html">Blog</a>
-<a href="sobre.html">Sobre</a>
-    </nav>
+        <nav class="site-nav" aria-label="Navegação principal">
+            <a href="../index.html">Home</a>
+            <a href="galeria.html">Galeria</a>
+            <a href="livro.html">Livro</a>
+            <a href="blog.html" aria-current="page">Blog</a>
+            <a href="sobre.html">Sobre</a>
+        </nav>
+    </header>
 
-</header>
-<section class="blog">
+    <main>
+        <section class="blog" aria-labelledby="blog-title">
+            <div class="container-blog">
+                <h2 id="blog-title" class="section-title">Blog</h2>
+                <div class="linha-blog"></div>
 
-<div class="container-blog">
+                <div class="grid-blog">
+                    <article class="post-card">
+                        <img src="../images/Rua Duque de Caxias.jpeg" alt="Rua Duque de Caxias em registro histórico" loading="lazy">
+                        <div class="post-card-content">
+                            <h3>Memórias que atravessam gerações</h3>
+                            <p>Um olhar sobre o valor afetivo e documental das imagens antigas de Parnaíba.</p>
+                            <a href="post.html">Ler mais</a>
+                        </div>
+                    </article>
 
-<h2>Blog</h2>
-<div class="linha-blog"></div>
+                    <article class="post-card">
+                        <img src="../images/Captura de tela de 2026-03-12 14-58-14.png" alt="Porto das Barcas em registro histórico" loading="lazy">
+                        <div class="post-card-content">
+                            <h3>História de Parnaíba</h3>
+                            <p>Um mergulho nas memórias da cidade através de fotografias antigas e paisagens simbólicas.</p>
+                            <a href="post.html">Ler mais</a>
+                        </div>
+                    </article>
 
-<div class="grid-blog">
+                    <article class="post-card">
+                        <img src="../images/Fotos-antigas-phb 33.png" alt="Arquitetura antiga da cidade de Parnaíba" loading="lazy">
+                        <div class="post-card-content">
+                            <h3>Arquitetura Antiga</h3>
+                            <p>Explorando as transformações arquitetônicas da cidade ao longo do tempo.</p>
+                            <a href="post.html">Ler mais</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
 
-<div class="post-card">
-<img src="../assets/imagens/post1.jpg">
-<h3>Título do Post</h3>
-<p>
-Uma breve descrição do conteúdo do post para despertar
-a curiosidade do leitor.
-</p>
-<a href="#">Ler mais</a>
-</div>
-
-<div class="post-card">
-<img src="../assets/imagens/post2.jpg">
-<h3>História de Parnaíba</h3>
-<p>
-Um mergulho nas memórias da cidade através
-de fotografias antigas.
-</p>
-<a href="#">Ler mais</a>
-</div>
-
-<div class="post-card">
-<img src="../assets/imagens/post3.jpg">
-<h3>Arquitetura Antiga</h3>
-<p>
-Explorando as transformações arquitetônicas
-da cidade ao longo do tempo.
-</p>
-<a href="#">Ler mais</a>
-</div>
-
-</div>
-
-</div>
-</section>
-<footer>
-
-<p>© 2026 Postais da Parnahyba</p>
-<p>Desenvolvido por Sallys Martins</p>
-
-</footer>
+    <footer class="site-footer">
+        <p>© 2026 Postais da Parnahyba</p>
+        <p>Desenvolvido por Sallys Martins</p>
+    </footer>
 </body>
 </html>

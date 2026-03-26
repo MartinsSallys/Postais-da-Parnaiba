@@ -1,26 +1,10 @@
-/* ==========================================================================
-   1. CONFIGURAÇÕES GLOBAIS E RESETS
-   ========================================================================== */
 :root {
-    --primary-color: #8b5e3c;
     --hover-color: #ff6200;
-    --bg-light: #dfdfdf;
-    --shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* ==========================================================================
-   2. SEÇÃO HISTÓRIA (SOBRE)
-   ========================================================================== */
 .historia {
-    padding: 80px 5%; /* Uso de % para manter respiro lateral em qualquer tela */
-    background: var(--bg-light);
+    padding: 80px 5%;
+    background: var(--color-bg);
     animation: fadeUp 1s ease forwards;
 }
 
@@ -29,18 +13,21 @@
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     align-items: center;
-    max-width: 1100px;
-    margin: 40px auto 0;
+    margin-top: 40px;
+}
+
+.texto p {
+    font-size: 1.1rem;
+    color: #333333;
+    margin-bottom: 15px;
 }
 
 .imagem img {
     width: 100%;
-    height: auto;
     border-radius: 8px;
     filter: grayscale(100%);
-    transition: var(--transition);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    display: block;
+    transition: transform var(--transition-base), filter var(--transition-base);
+    box-shadow: var(--shadow-strong);
 }
 
 .imagem img:hover {
@@ -48,159 +35,49 @@
     transform: translateY(-5px);
 }
 
-.texto {
-    max-width: 100%; /* Ajustado para flexibilidade */
-}
-
-.texto p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-/* ==========================================================================
-   3. GALERIA HOME
-   ========================================================================== */
 .galeria-home {
     padding: 100px 5% 60px;
     text-align: center;
-    background: var(--bg-light);
+    background: var(--color-bg);
 }
 
-.galeria-home h2 {
-    font-size: clamp(1.8rem, 5vw, 2.5rem); /* Fonte fluida */
-    margin-bottom: 0;
-}
-
-.linha {
-    width: 70px;
-    height: 3px;
-    background: var(--primary-color);
-    margin: 15px auto 40px;
-}
-
-/* Grid da Galeria com Inteligência de Colunas */
 .grid-galeria {
     display: grid;
-    /* auto-fill garante que as colunas tentem preencher o espaço mesmo com poucos itens */
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 20px;
-    max-width: 1100px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .grid-galeria img {
     width: 100%;
-    height: 300px; /* Altura fixa para manter o grid alinhado */
-    object-fit: cover; /* Recorte inteligente para não espremer a imagem */
+    height: 300px;
+    object-fit: cover;
     border-radius: 8px;
-    cursor: pointer;
-    transition: var(--transition);
-    box-shadow: var(--shadow);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    box-shadow: var(--shadow-soft);
 }
 
-/* Efeito Hover apenas para dispositivos com Mouse (Previne bugs no mobile) */
 @media (hover: hover) {
     .grid-galeria img:hover {
         transform: scale(1.03);
-        box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-        z-index: 2;
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
     }
 }
 
-/* Botão Estilizado */
 .btn-galeria {
     display: inline-block;
     margin-top: 40px;
     padding: 14px 35px;
-    background: var(--primary-color);
-    color: white;
+    background: var(--color-primary);
+    color: var(--color-light);
     text-decoration: none;
     font-weight: 600;
     border-radius: 5px;
-    transition: var(--transition);
+    transition: background-color var(--transition-base), transform var(--transition-base);
 }
 
-.btn-galeria:hover {
+.btn-galeria:hover,
+.btn-galeria:focus-visible {
     background: var(--hover-color);
     transform: translateY(-3px);
-}
-
-/* ==========================================================================
-   4. MEDIA QUERIES (RESPONSIVIDADE ÉPICA)
-   ========================================================================== */
-
-/* --- Laptops e Tablets (1024px) --- */
-@media (max-width: 1024px) {
-    .sobre-grid {
-        gap: 30px;
-    }
-    .grid-galeria {
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    }
-}
-
-/* --- Tablet Pequeno / iPad (768px) --- */
-@media (max-width: 768px) {
-    .sobre-grid {
-        grid-template-columns: 1fr; /* Empilha o conteúdo (Texto em cima/Imagem baixo) */
-        text-align: center;
-    }
-
-    .historia {
-        padding: 60px 20px;
-    }
-
-    .texto {
-        order: 1; /* Garante que o texto venha antes da imagem */
-    }
-
-    .imagem {
-        order: 2;
-        max-width: 500px;
-        margin: 0 auto;
-    }
-
-    .grid-galeria {
-        gap: 15px; /* Gap menor para telas menores */
-    }
-}
-
-/* --- Mobile (480px) --- */
-@media (max-width: 480px) {
-    .galeria-home {
-        padding: 60px 15px;
-    }
-
-    .grid-galeria {
-        /* Permite que as imagens ocupem a largura total se a tela for muito pequena */
-        grid-template-columns: 1fr; 
-    }
-
-    .grid-galeria img {
-        height: 250px; /* Reduz altura para não ocupar a tela mobile toda */
-    }
-
-    .btn-galeria {
-        width: 100%; /* Botão vira bloco no mobile para facilitar o clique */
-        text-align: center;
-    }
-}
-
-/* --- Mobile Pequeno (360px) --- */
-@media (max-width: 360px) {
-    .grid-galeria img {
-        height: 200px;
-    }
-    
-    .historia h2, .galeria-home h2 {
-        font-size: 1.6rem;
-    }
-}
-
-/* Animações */
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
 }

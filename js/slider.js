@@ -1,12 +1,10 @@
-let contador = 1;
+const sliderInputs = document.querySelectorAll('.slider input[name="slide"]');
 
-setInterval(function(){
-    contador++;
+if (sliderInputs.length > 0) {
+    let contador = 0;
 
-    if(contador > 5){
-        contador = 1;
-    }
-
-    document.getElementById("s"+contador).checked = true;
-
-}, 4000);
+    setInterval(() => {
+        contador = (contador + 1) % sliderInputs.length;
+        sliderInputs[contador].checked = true;
+    }, 4000);
+}

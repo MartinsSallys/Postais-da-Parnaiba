@@ -1,18 +1,13 @@
-let slides = document.querySelectorAll(".slide-livro")
-let index = 0
+const slidesLivro = document.querySelectorAll(".slide-livro");
 
-function trocarSlide(){
+if (slidesLivro.length > 1) {
+    let index = 0;
 
-slides[index].classList.remove("ativo")
+    function trocarSlide() {
+        slidesLivro[index].classList.remove("ativo");
+        index = (index + 1) % slidesLivro.length;
+        slidesLivro[index].classList.add("ativo");
+    }
 
-index++
-
-if(index >= slides.length){
-index = 0
+    setInterval(trocarSlide, 3000);
 }
-
-slides[index].classList.add("ativo")
-
-}
-
-setInterval(trocarSlide,3000)

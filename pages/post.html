@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-<meta charset="UTF-8">
-<title>Postais da Parnaíba</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/header.css">
-<link rel="stylesheet" href="css/slider.css">
-<link rel="stylesheet" href="css/footer.css">
-<link rel="stylesheet" href="css/hero.css">
-<link rel="stylesheet" href="css/blog.css">
-<link href="stylesheet" href="../css/responsive.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Leitura de destaque do blog Postais da Parnaíba sobre memória urbana e patrimônio visual da cidade.">
+    <title>Post | Postais da Parnaíba</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 </head>
-
 <body>
+    <header class="site-header">
+        <h1 class="site-title">
+            <a href="../index.html" class="logo">Postais da Parnaíba</a>
+        </h1>
 
-<header>
-<h1>
-    <a href="../index.html" class="logo">Postais da Parnaiba</a>
-</h1>
+        <nav class="site-nav" aria-label="Navegação principal">
+            <a href="../index.html">Home</a>
+            <a href="galeria.html">Galeria</a>
+            <a href="livro.html">Livro</a>
+            <a href="blog.html" aria-current="page">Blog</a>
+            <a href="sobre.html">Sobre</a>
+        </nav>
+    </header>
 
-<nav>
-<a href="../index.html">Home</a>
-<a href="pages/galeria.html">Galeria</a>
-<a href="pages/livro.html">Livro</a>
-<a href="pages/blog.html">Blog</a>
-<a href="pages/sobre.html">Sobre</a>
-</nav>
+    <main>
+        <section class="blog" aria-labelledby="post-title">
+            <div class="container-blog">
+                <article class="post-card post-single">
+                    <img src="../images/Rua Duque de Caxias.jpeg" alt="Rua Duque de Caxias em fotografia antiga" loading="lazy">
+                    <div class="post-card-content">
+                        <h2 id="post-title">Memórias que atravessam gerações</h2>
+                        <p>O acervo reunido em Postais da Parnaíba mostra como a cidade preserva suas marcas afetivas em fachadas, rios, praças e percursos do cotidiano.</p>
+                        <p>Cada imagem funciona como documento histórico e também como ponto de encontro entre passado e presente, conectando moradores, pesquisadores e admiradores da cultura local.</p>
+                        <p>Esta página agora está estruturada como um post real, com caminhos corretos de CSS, navegação consistente e conteúdo base pronto para receber textos futuros.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
 
-</header>
-
-<footer>
-
-<p>© 2026 Postais da Parnahyba</p>
-<p>Desenvolvido por Sallys Martins</p>
-
-</footer>
-
-<script src="js/slider.js"></script>
-
+    <footer class="site-footer">
+        <p>© 2026 Postais da Parnahyba</p>
+        <p>Desenvolvido por Sallys Martins</p>
+    </footer>
 </body>
 </html>

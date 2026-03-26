@@ -3,87 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Postais da Parnahyba</title>
+    <meta name="description" content="Conheça o livro Postais da Parnaíba e a proposta visual construída a partir do acervo histórico da cidade.">
+    <title>Livro | Postais da Parnaíba</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../css/header.css">
-<link rel="stylesheet" href="../css/slider.css">
-<link rel="stylesheet" href="../css/footer.css">
-<link rel="stylesheet" href="../css/hero.css">
-<link rel="stylesheet" href="../css/sobrehome.css" class="rel">
-<link rel="stylesheet" href="../css/livro.css">
-<link href="stylesheet" href="../css/responsive.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/livro.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 </head>
+<body>
+    <header class="site-header">
+        <h1 class="site-title">
+            <a href="../index.html" class="logo">Postais da Parnaíba</a>
+        </h1>
 
-<body>  
-<header>
-<h1>
-    <a href="../index.html" class="logo">Postais da Parnaiba</a>
-</h1>
-    <nav>
-        <a href="../index.html">Home</a>
-        <a href="galeria.html">Galeria</a>
-        <a href="livro.html">Livro</a>
-        <a href="blog.html">Blog</a>
-        <a href="sobre.html">Sobre</a>
-    </nav>
+        <nav class="site-nav" aria-label="Navegação principal">
+            <a href="../index.html">Home</a>
+            <a href="galeria.html">Galeria</a>
+            <a href="livro.html" aria-current="page">Livro</a>
+            <a href="blog.html">Blog</a>
+            <a href="sobre.html">Sobre</a>
+        </nav>
+    </header>
 
-</header>
-<section class="livro">
+    <main>
+        <section class="livro" aria-labelledby="livro-title">
+            <div class="conteiner-livro">
+                <h2 id="livro-title">Postais da Parnaíba</h2>
+                <div class="linha-livro"></div>
 
-<div class="conteiner-livro">
+                <div class="grid-livro">
+                    <div class="slider-livro" aria-label="Capas do livro">
+                        <img class="slide-livro ativo" src="../images/livro-capa.jpeg" alt="Capa frontal do livro Postais da Parnaíba">
+                        <img class="slide-livro" src="../images/livro-capa2.jpeg" alt="Segunda imagem da capa do livro Postais da Parnaíba">
+                    </div>
 
-<h2>Postais da Parnaíba</h2>
-<div class="linha-livro"></div>
+                    <article class="livro-texto">
+                        <h3 class="livro-destaque">Sobre o Livro</h3>
 
-<div class="grid-livro">
+                        <h3>Pesquisa Histórica</h3>
+                        <p>Nosso passeio começa a partir de uma pesquisa histórica minuciosa, que reuniu mais de <strong>700 fotografias antigas da cidade de Parnaíba</strong>.</p>
 
-<div class="slider-livro">
+                        <h3>Acervos e Colaborações</h3>
+                        <p>Boa parte desse material foi reunida no grupo <strong>Parnaíba das Antigas</strong>.</p>
 
-<img class="slide-livro ativo" src="../assets/imagens/livro-capa.jpeg">
+                        <h3>Uma Jornada Visual</h3>
+                        <p>O livro conduz o leitor a uma jornada visual pelas transformações arquitetônicas.</p>
 
-<img class="slide-livro" src="../assets/imagens/livro-capa2.jpeg">
+                        <h3>Memória Compartilhada</h3>
+                        <p>Além de sua riqueza documental, os cartões são destacáveis.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
 
-</div>
+    <footer class="site-footer">
+        <p>© 2026 Postais da Parnahyba</p>
+        <p>Desenvolvido por Sallys Martins</p>
+    </footer>
 
-<div class="livro-texto">
-
-<h2 class="livro-destaque">Sobre o Livro</h2>
-
-<h3>Pesquisa Histórica</h3>
-<p>
-Nosso passeio começa a partir de uma pesquisa histórica minuciosa, que reuniu
-mais de <strong>700 fotografias antigas da cidade de Parnaíba</strong>.
-</p>
-
-<h3>Acervos e Colaborações</h3>
-<p>
-Boa parte desse material foi reunida no grupo <strong>Parnaíba das Antigas</strong>.
-</p>
-
-<h3>Uma Jornada Visual</h3>
-<p>
-O livro conduz o leitor a uma jornada visual pelas transformações arquitetônicas.
-</p>
-
-<h3>Memória Compartilhada</h3>
-<p>
-Além de sua riqueza documental, os cartões são destacáveis.
-</p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-</section>
-</div>
-<script src="../js/script.js"></script>
-<footer>
-   <p>© 2026 Postais da Parnahyba</p>
-<p>Desenvolvido por Sallys Martins</p>
-</footer>
-
+    <script src="../js/script.js"></script>
 </body>
 </html>

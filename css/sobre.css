@@ -1,81 +1,52 @@
-.sobre-gride-autor{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:center;
-max-width: 1000px;
-}
-.autor-imagem img{
-width: 90%;
-border-radius:8px;
-filter:grayscale(100%);
-transition:0.4s;
-box-shadow:0 10px 20px rgba(0, 0, 0, 0.916);
-}
-.autor-imagem img:hover{
-filter:grayscale(0%);
-}
-.Autor{
-animation:fadeUp 1s ease;
-padding: 120px 20px;
-background: #f5f1e8;
-padding: 80px 20px;
-background-size: cover;    
-    background-repeat:no-repeat;
-}
-.linha-autor{
-width:70px;
-height:3px;
-background:#8b5e3c;
-margin:15px auto 40px;
+.Autor {
+    padding: 100px 20px;
+    background: var(--color-surface);
+    animation: fadeUp 1s ease;
 }
 
-@keyframes fadeUp{
-
-from{
-opacity:0;
-transform:translateY(30px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
-}
-.autor-historia h2::after{
-display:block;
-width:80px;
-height:3px;
-background:#8b5e3c;
-margin:15px auto;
-color: black
-
-}
-.autor-destaque{
-font-size:20px;
-font-weight:600;
-color:black;
-}
-.autor-texto{
-max-width:500px;
-} 
-
-.autor-texto {
-max-width: 500px;
-text-align: center;
-letter-spacing: 3px;
-text-shadow: black;
-}
 .container-autor {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    padding: 40px;
-}
-.container-autor h2{
-    font-size:2.2rem;
-margin-bottom:0;
+    padding: 0;
 }
 
+.container-autor > h2 {
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    text-align: center;
+}
+
+.sobre-gride-autor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.autor-texto {
+    text-align: left;
+    letter-spacing: 0.02em;
+}
+
+.autor-texto article > * + * {
+    margin-top: 16px;
+}
+
+.autor-destaque {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.autor-imagem img {
+    width: 100%;
+    border-radius: 8px;
+    filter: grayscale(100%);
+    transition: transform var(--transition-base), filter var(--transition-base);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.92);
+}
+
+.autor-imagem img:hover {
+    filter: grayscale(0%);
+    transform: translateY(-4px);
+}

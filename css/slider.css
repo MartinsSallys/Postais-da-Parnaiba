@@ -1,229 +1,112 @@
-/* ==========================================================================
-   1. RESET E CONFIGURAÇÕES GLOBAIS
-   ========================================================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-html, body {
-    width: 100%;
-    /* Impede scroll horizontal acidental, comum em sliders mal configurados */
-    overflow-x: hidden; 
-}
-
-/* ==========================================================================
-   2. CONTAINER DO SLIDER (ESTRUTURA)
-   ========================================================================== */
-.slider-container {
-    width: 100%;
-    /* Altura Desktop: Ocupa boa parte da tela, mas deixa ver o conteúdo abaixo */
-    height: 80vh; 
-    overflow: hidden;
-    position: relative;
-    background: #000; /* Fundo preto melhora o contraste e esconde carregamento */
-}
-
 .slider {
     width: 100%;
-    height: 100%;
+    height: clamp(420px, 68vh, 640px);
     position: relative;
+    overflow: hidden;
+    background: #000000;
 }
 
 .slider input {
     display: none;
 }
 
-/* 3. ESTRUTURA DOS SLIDES (FLEXBOX) */
 .slides {
     display: flex;
-    /* Largura total = 100% * número de slides (ex: 5 slides = 500%) */
-    width: 500%; 
+    width: 500%;
     height: 100%;
-    /* Performance Mobile: Usar transform para animações é mais fluido que margin */
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); 
-    /* Dica Sênior: Força renderização via hardware no mobile para evitar 'lags' */
-    will-change: transform; 
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
 }
 
 .slide {
-    /* Largura de cada slide individual (ex: 100% / 5 slides = 20%) */
-    width: 20%; 
+    width: 20%;
     height: 100%;
     position: relative;
-    overflow: hidden; /* Garante que nada saia do slide */
+    overflow: hidden;
+    background:
+        radial-gradient(circle at center, rgba(255, 255, 255, 0.08), transparent 60%),
+        #090909;
 }
 
-/* ==========================================================================
-   4. A SOLUÇÃO PROFISSIONAL PARA IMAGENS (UX/UI)
-   ========================================================================== */
 .slide img {
     width: 100%;
     height: 100%;
-    /* Cobre a área, mas pode cortar */
-    object-fit: cover; 
-    
-    /* SOLUÇÃO PONTO 1: Ponto Focal Padrão (Desktop)
-       A imagem é centralizada horizontalmente e levemente alinhada ao topo. 
-       Isso geralmente preserva rostos e horizontes melhor do que o centro puro. */
-    object-position: center 20%; 
-
-    filter: brightness(85%) contrast(105%); /* Leve ajuste para UI Moderna */
-    display: block;
-    
-    /* Performance Mobile: Impede que a imagem seja 'arrastada' pelo navegador */
+    object-fit: cover;
+    object-position: center center;
+    filter: brightness(88%) contrast(103%) saturate(94%);
+    transform: scale(1.015);
+    transform-origin: center;
     user-select: none;
     -webkit-user-drag: none;
+    image-rendering: auto;
 }
 
-/* ==========================================================================
-   5. OVERLAY E NAVEGAÇÃO
-   ========================================================================== */
-/* Overlay profissional (Vignette) para legibilidade */
 .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0.6) 0%,
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 0) 60%,
-        rgba(0, 0, 0, 0.7) 100%
+        rgba(7, 7, 7, 0.54) 0%,
+        rgba(7, 7, 7, 0.18) 34%,
+        rgba(7, 7, 7, 0.2) 58%,
+        rgba(7, 7, 7, 0.76) 100%
     );
-    z-index: 2;
-    pointer-events: none; /* Permite clicar através do overlay */
+    z-index: 1;
+    pointer-events: none;
 }
 
-/* Lógica de Movimentação (IDs) */
-#s1:checked ~ .slides { transform: translateX(0); }
-#s2:checked ~ .slides { transform: translateX(-20%); }
-#s3:checked ~ .slides { transform: translateX(-40%); }
-#s4:checked ~ .slides { transform: translateX(-60%); }
-#s5:checked ~ .slides { transform: translateX(-80%); }
+#s1:checked ~ .slides {
+    transform: translateX(0);
+}
 
-/* Botões de Navegação (Indicadores) */
+#s2:checked ~ .slides {
+    transform: translateX(-20%);
+}
+
+#s3:checked ~ .slides {
+    transform: translateX(-40%);
+}
+
+#s4:checked ~ .slides {
+    transform: translateX(-60%);
+}
+
+#s5:checked ~ .slides {
+    transform: translateX(-80%);
+}
+
 .navegacao {
     position: absolute;
-    bottom: 30px;
+    left: 0;
+    bottom: 26px;
+    z-index: 10;
     width: 100%;
     display: flex;
     justify-content: center;
     gap: 12px;
-    z-index: 10;
 }
 
 .navegacao label {
-    width: 40px;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 4px;
+    width: 38px;
+    height: 5px;
+    background: rgba(255, 248, 236, 0.34);
+    border: 1px solid rgba(255, 240, 220, 0.22);
+    border-radius: 999px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.24);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background var(--transition-base), width var(--transition-base), transform var(--transition-base);
 }
 
 .navegacao label:hover {
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 248, 236, 0.56);
+    transform: translateY(-1px);
 }
 
-/* Indicador Ativo */
 #s1:checked ~ .navegacao label[for="s1"],
 #s2:checked ~ .navegacao label[for="s2"],
 #s3:checked ~ .navegacao label[for="s3"],
 #s4:checked ~ .navegacao label[for="s4"],
 #s5:checked ~ .navegacao label[for="s5"] {
-    background: #FFD700; /* Cor destaque */
-    width: 60px; /* Feedback visual */
-}
-
-/* ==========================================================================
-   6. MEDIA QUERIES - RESPONSIVIDADE E UX MOBILE
-   ========================================================================== */
-
-/* --- Desktops Pequenos / Laptops (1024px) --- */
-@media (max-width: 1024px) {
-    .slider-container {
-        height: 70vh; /* Reduz um pouco a altura */
-    }
-}
-
-/* --- Tablets (768px) --- */
-@media (max-width: 768px) {
-    .slider-container {
-        /* Altura adaptada para tablets portrait */
-        height: 60vh; 
-    }
-
-    /* SOLUÇÃO PONTO 2: Ajuste Focal para Tablet
-       Como a tela é mais estreita, centralizamos o ponto focal. */
-    .slide img {
-        object-position: center center;
-    }
-
-    .navegacao label {
-        width: 30px;
-    }
-}
-
-/* --- Mobile Geral (480px) ---
-   Foco em performance e enquadramento agressivo. */
-@media (max-width: 480px) {
-    .slider-container {
-        /* SOLUÇÃO PONTO 3: Altura Dinâmica UX.
-           Uma tela de celular é muito alta (vertical). Se mantivermos a imagem
-           fullscreen (90vh/100vh), o 'cover' cortará demais as laterais.
-           Reduzindo a altura do container para 50% da tela, preservamos a 
-           proporção horizontal da imagem e evitamos cortes agressivos. */
-        height: 50vh; 
-    }
-
-    /* SOLUÇÃO PONTO 4: Ponto Focal Mobile.
-       Geralmente o assunto principal está no centro da foto. Forçamos o 
-       enquadramento central absoluto. Se suas fotos têm rostos no topo, 
-       use 'center 10%'. */
-    .slide img {
-        object-position: center center;
-    }
-
-    /* UI: Navegação mais discreta no celular */
-    .navegacao {
-        bottom: 15px;
-        gap: 8px;
-    }
-
-    .navegacao label {
-        width: 20px;
-        height: 5px;
-    }
-
-    /* Tamanho do indicador ativo no mobile */
-    #s1:checked ~ .navegacao label[for="s1"],
-    /* ... (repetir para outros IDs se necessário) */
-    #s5:checked ~ .navegacao label[for="s5"] {
-        width: 35px;
-    }
-}
-
-/* --- Mobile Pequeno (360px) ---
-   Dispositivos antigos ou compactos. Mínima distração. */
-@media (max-width: 360px) {
-    .slider-container {
-        /* Altura ainda menor para garantir enquadramento */
-        height: 45vh; 
-    }
-
-    .navegacao {
-        /* Esconde a navegação ou torna-a mínima se preferir, 
-           pois o dedo do usuário pode cobrir tudo. */
-        gap: 5px;
-    }
-
-    .navegacao label {
-        width: 15px;
-        height: 4px;
-    }
+    width: 56px;
+    background: #d6b07b;
 }

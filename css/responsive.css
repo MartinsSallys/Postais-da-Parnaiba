@@ -1,0 +1,132 @@
+@media (max-width: 1024px) {
+    .grid-galeria {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+
+    .slider {
+        height: clamp(380px, 62vh, 560px);
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --header-height: 116px;
+    }
+
+    .site-header {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding-inline: 20px;
+    }
+
+    .site-nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero-text {
+        left: 24px;
+        bottom: 12%;
+        max-width: calc(100% - 48px);
+    }
+
+    .sobre-grid,
+    .sobre-gride-autor,
+    .grid-livro,
+    .grid-blog {
+        grid-template-columns: 1fr;
+    }
+
+    .texto,
+    .livro-texto,
+    .autor-texto {
+        text-align: center;
+    }
+
+    .imagem,
+    .autor-imagem {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .slider {
+        height: clamp(340px, 54vh, 460px);
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --header-height: 136px;
+    }
+
+    body {
+        padding-top: var(--header-height);
+    }
+
+    .site-nav a {
+        font-size: 0.92rem;
+    }
+
+    .slider {
+        height: clamp(300px, 48vh, 360px);
+    }
+
+    .navegacao {
+        bottom: 14px;
+        gap: 8px;
+    }
+
+    .navegacao label {
+        width: 20px;
+        height: 5px;
+    }
+
+    #s1:checked ~ .navegacao label[for="s1"],
+    #s2:checked ~ .navegacao label[for="s2"],
+    #s3:checked ~ .navegacao label[for="s3"],
+    #s4:checked ~ .navegacao label[for="s4"],
+    #s5:checked ~ .navegacao label[for="s5"] {
+        width: 35px;
+    }
+
+    .galeria-home,
+    .historia,
+    .blog,
+    .livro,
+    .Autor {
+        padding-inline: 15px;
+    }
+
+    .grid-galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-galeria img {
+        height: 250px;
+    }
+
+    .btn-galeria {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 360px) {
+    :root {
+        --header-height: 150px;
+    }
+
+    .slider {
+        height: 280px;
+    }
+
+    .navegacao label {
+        width: 15px;
+        height: 4px;
+    }
+
+    .grid-galeria img {
+        height: 200px;
+    }
+}
