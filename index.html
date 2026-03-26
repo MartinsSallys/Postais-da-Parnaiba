@@ -33,12 +33,13 @@
     </header>
 
     <main>
-        <section class="slider" aria-label="Destaques em imagens de Parnaíba">
+        <section class="slider" aria-label="Destaques em imagens de Parnaíba" aria-roledescription="carrossel" aria-describedby="slider-instructions" tabindex="0">
             <input type="radio" name="slide" id="s1" checked>
             <input type="radio" name="slide" id="s2">
             <input type="radio" name="slide" id="s3">
             <input type="radio" name="slide" id="s4">
             <input type="radio" name="slide" id="s5">
+            <p id="slider-instructions" class="u-sr-only">Use as setas do teclado para navegar pelos slides e Enter ou espaço para ativar um controle do slider.</p>
 
             <div class="slides">
                 <article class="slide">
@@ -47,7 +48,7 @@
                     <div class="hero-text">
                         <h2>Memórias visuais de Parnaíba</h2>
                         <p>Explore paisagens, ruas e monumentos que ajudam a contar a história da cidade em diferentes épocas.</p>
-                        <a href="pages/galeria.html" class="btn">Explorar galeria</a>
+                        <a href="pages/galeria.html" class="btn btn--primary">Explorar galeria</a>
                     </div>
                 </article>
 
@@ -57,7 +58,7 @@
                     <div class="hero-text">
                         <h2>Centro histórico em destaque</h2>
                         <p>Uma seleção de imagens que preserva fachadas, percursos e lembranças do cotidiano parnaibano.</p>
-                        <a href="pages/galeria.html" class="btn">Ver acervo</a>
+                        <a href="pages/galeria.html" class="btn btn--primary">Ver acervo</a>
                     </div>
                 </article>
 
@@ -67,7 +68,7 @@
                     <div class="hero-text">
                         <h2>Arquitetura e memória</h2>
                         <p>Registros visuais revelam transformações urbanas e o valor simbólico do patrimônio da cidade.</p>
-                        <a href="pages/galeria.html" class="btn">Conhecer coleção</a>
+                        <a href="pages/galeria.html" class="btn btn--primary">Conhecer coleção</a>
                     </div>
                 </article>
 
@@ -77,7 +78,7 @@
                     <div class="hero-text">
                         <h2>Patrimônio em imagens</h2>
                         <p>Postais, fotografias e detalhes urbanos reunidos para valorizar a memória afetiva de Parnaíba.</p>
-                        <a href="pages/galeria.html" class="btn">Explorar postais</a>
+                        <a href="pages/galeria.html" class="btn btn--primary">Explorar postais</a>
                     </div>
                 </article>
 
@@ -87,17 +88,17 @@
                     <div class="hero-text">
                         <h2>Um acervo para revisitar a cidade</h2>
                         <p>Descubra cenas antigas e contemporâneas que aproximam passado, identidade e pertencimento.</p>
-                        <a href="pages/galeria.html" class="btn">Abrir galeria</a>
+                        <a href="pages/galeria.html" class="btn btn--primary">Abrir galeria</a>
                     </div>
                 </article>
             </div>
 
-            <div class="navegacao" aria-label="Selecionar slide">
-                <label for="s1"><span class="visually-hidden">Slide 1</span></label>
-                <label for="s2"><span class="visually-hidden">Slide 2</span></label>
-                <label for="s3"><span class="visually-hidden">Slide 3</span></label>
-                <label for="s4"><span class="visually-hidden">Slide 4</span></label>
-                <label for="s5"><span class="visually-hidden">Slide 5</span></label>
+            <div class="navegacao" role="group" aria-label="Controles do slider">
+                <label for="s1" class="slider__dot" tabindex="0" role="button" aria-label="Ir para o slide 1"></label>
+                <label for="s2" class="slider__dot" tabindex="0" role="button" aria-label="Ir para o slide 2"></label>
+                <label for="s3" class="slider__dot" tabindex="0" role="button" aria-label="Ir para o slide 3"></label>
+                <label for="s4" class="slider__dot" tabindex="0" role="button" aria-label="Ir para o slide 4"></label>
+                <label for="s5" class="slider__dot" tabindex="0" role="button" aria-label="Ir para o slide 5"></label>
             </div>
         </section>
 
@@ -132,58 +133,58 @@
                 </p>
 
                 <div class="postal-grid">
-                    <article class="postal-card">
-                        <a href="pages/postal-antigo.html" class="postal-card-media">
-                            <img src="images/Fotos-antigas-phb 22.png" alt="Postal antigo com vista urbana de Parnaíba" loading="lazy">
+                    <article class="card card--postal postal-card">
+                        <a href="pages/postal-antigo.html" class="card__media postal-card-media">
+                            <img src="images/Fotos-antigas-phb 22.png" alt="Postal antigo com vista urbana de Parnaíba" loading="lazy" class="card__image">
                         </a>
-                        <div class="postal-card-content">
-                            <h3><a href="pages/postal-antigo.html" class="postal-card-title">Postal Antigo</a></h3>
-                            <p>Parnaíba, década de 1950</p>
-                            <a href="pages/postal-antigo.html" class="btn postal-card-link">Ver mais</a>
+                        <div class="card__body postal-card-content">
+                            <h3 class="card__title"><a href="pages/postal-antigo.html" class="card__title-link postal-card-title">Postal Antigo</a></h3>
+                            <p class="card__description">Parnaíba, década de 1950</p>
+                            <a href="pages/postal-antigo.html" class="btn btn--primary postal-card-link">Ver mais</a>
                         </div>
                     </article>
 
-                    <article class="postal-card">
-                        <a href="pages/centro-historico.html" class="postal-card-media">
-                            <img src="images/Fotos-antigas-phb 44.png" alt="Registro do centro histórico de Parnaíba" loading="lazy">
+                    <article class="card card--postal postal-card">
+                        <a href="pages/centro-historico.html" class="card__media postal-card-media">
+                            <img src="images/Fotos-antigas-phb 44.png" alt="Registro do centro histórico de Parnaíba" loading="lazy" class="card__image">
                         </a>
-                        <div class="postal-card-content">
-                            <h3><a href="pages/centro-historico.html" class="postal-card-title">Centro Histórico</a></h3>
-                            <p>Parnaíba, primeiras décadas do século XX</p>
-                            <a href="pages/centro-historico.html" class="btn postal-card-link">Ver mais</a>
+                        <div class="card__body postal-card-content">
+                            <h3 class="card__title"><a href="pages/centro-historico.html" class="card__title-link postal-card-title">Centro Histórico</a></h3>
+                            <p class="card__description">Parnaíba, primeiras décadas do século XX</p>
+                            <a href="pages/centro-historico.html" class="btn btn--primary postal-card-link">Ver mais</a>
                         </div>
                     </article>
 
-                    <article class="postal-card">
-                        <a href="pages/porto-das-barcas.html" class="postal-card-media">
-                            <img src="images/Captura de tela de 2026-03-12 14-58-14.png" alt="Porto das Barcas e Alfândega de Parnaíba" loading="lazy">
+                    <article class="card card--postal postal-card">
+                        <a href="pages/porto-das-barcas.html" class="card__media postal-card-media">
+                            <img src="images/Captura de tela de 2026-03-12 14-58-14.png" alt="Porto das Barcas e Alfândega de Parnaíba" loading="lazy" class="card__image">
                         </a>
-                        <div class="postal-card-content">
-                            <h3><a href="pages/porto-das-barcas.html" class="postal-card-title">Porto das Barcas</a></h3>
-                            <p>Parnaíba, anos 1940</p>
-                            <a href="pages/porto-das-barcas.html" class="btn postal-card-link">Ver mais</a>
+                        <div class="card__body postal-card-content">
+                            <h3 class="card__title"><a href="pages/porto-das-barcas.html" class="card__title-link postal-card-title">Porto das Barcas</a></h3>
+                            <p class="card__description">Parnaíba, anos 1940</p>
+                            <a href="pages/porto-das-barcas.html" class="btn btn--primary postal-card-link">Ver mais</a>
                         </div>
                     </article>
 
-                    <article class="postal-card">
-                        <a href="pages/mercado-publico.html" class="postal-card-media">
-                            <img src="images/Captura de tela de 2026-03-12 14-56-48.png" alt="Vista histórica de edifício ligado à vida urbana de Parnaíba" loading="lazy">
+                    <article class="card card--postal postal-card">
+                        <a href="pages/mercado-publico.html" class="card__media postal-card-media">
+                            <img src="images/Captura de tela de 2026-03-12 14-56-48.png" alt="Vista histórica de edifício ligado à vida urbana de Parnaíba" loading="lazy" class="card__image">
                         </a>
-                        <div class="postal-card-content">
-                            <h3><a href="pages/mercado-publico.html" class="postal-card-title">Mercado Público</a></h3>
-                            <p>Parnaíba, memória comercial e popular</p>
-                            <a href="pages/mercado-publico.html" class="btn postal-card-link">Ver mais</a>
+                        <div class="card__body postal-card-content">
+                            <h3 class="card__title"><a href="pages/mercado-publico.html" class="card__title-link postal-card-title">Mercado Público</a></h3>
+                            <p class="card__description">Parnaíba, memória comercial e popular</p>
+                            <a href="pages/mercado-publico.html" class="btn btn--primary postal-card-link">Ver mais</a>
                         </div>
                     </article>
 
-                    <article class="postal-card">
-                        <a href="pages/delta-do-parnaiba.html" class="postal-card-media">
-                            <img src="images/Captura de tela de 2026-03-12 14-58-30.png" alt="Cena histórica ligada ao Delta do Parnaíba" loading="lazy">
+                    <article class="card card--postal postal-card">
+                        <a href="pages/delta-do-parnaiba.html" class="card__media postal-card-media">
+                            <img src="images/Captura de tela de 2026-03-12 14-58-30.png" alt="Cena histórica ligada ao Delta do Parnaíba" loading="lazy" class="card__image">
                         </a>
-                        <div class="postal-card-content">
-                            <h3><a href="pages/delta-do-parnaiba.html" class="postal-card-title">Delta do Parnaíba</a></h3>
-                            <p>Paisagem, rio e cotidiano tradicional</p>
-                            <a href="pages/delta-do-parnaiba.html" class="btn postal-card-link">Ver mais</a>
+                        <div class="card__body postal-card-content">
+                            <h3 class="card__title"><a href="pages/delta-do-parnaiba.html" class="card__title-link postal-card-title">Delta do Parnaíba</a></h3>
+                            <p class="card__description">Paisagem, rio e cotidiano tradicional</p>
+                            <a href="pages/delta-do-parnaiba.html" class="btn btn--primary postal-card-link">Ver mais</a>
                         </div>
                     </article>
                 </div>
