@@ -11,8 +11,16 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .livro-highlight-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .livro-preview-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
     .slider {
-        height: clamp(380px, 62vh, 560px);
+        height: clamp(420px, 64vh, 620px);
     }
 }
 
@@ -42,7 +50,10 @@
     .sobre-grid,
     .sobre-gride-autor,
     .grid-livro,
-    .grid-blog {
+    .grid-blog,
+    .livro-hero-grid,
+    .livro-section-grid,
+    .livro-author-grid {
         grid-template-columns: 1fr;
     }
 
@@ -56,7 +67,10 @@
 
     .texto,
     .livro-texto,
-    .autor-texto {
+    .autor-texto,
+    .livro-copy-block,
+    .livro-author-copy,
+    .livro-hero-copy {
         text-align: center;
     }
 
@@ -66,8 +80,26 @@
         margin: 0 auto;
     }
 
+    .autor-social,
+    .livro-social,
+    .livro-actions {
+        justify-content: center;
+    }
+
+    .livro-divider-left {
+        margin-inline: auto;
+    }
+
+    .livro-preview-grid {
+        grid-template-columns: 1fr;
+    }
+
     .slider {
-        height: clamp(340px, 54vh, 460px);
+        height: clamp(360px, 58vh, 500px);
+    }
+
+    .slide img {
+        object-position: center center;
     }
 }
 
@@ -85,7 +117,7 @@
     }
 
     .slider {
-        height: clamp(300px, 48vh, 360px);
+        height: clamp(320px, 52vh, 390px);
     }
 
     .navegacao {
@@ -125,12 +157,17 @@
         grid-template-columns: 1fr;
     }
 
+    .livro-highlight-grid {
+        grid-template-columns: 1fr;
+    }
+
     .grid-galeria img {
         height: 250px;
     }
 
     .btn-galeria,
-    .postal-card-link {
+    .postal-card-link,
+    .livro-actions .btn {
         width: 100%;
         text-align: center;
     }
@@ -142,7 +179,7 @@
     }
 
     .slider {
-        height: 280px;
+        height: 300px;
     }
 
     .navegacao label {

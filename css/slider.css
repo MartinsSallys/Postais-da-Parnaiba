@@ -1,6 +1,6 @@
 .slider {
     width: 100%;
-    height: clamp(420px, 68vh, 640px);
+    height: clamp(460px, 72vh, 720px);
     position: relative;
     overflow: hidden;
     background: #000000;
@@ -19,7 +19,7 @@
 }
 
 .slide {
-    width: 100%;
+    width: 20%;
     height: 100%;
     position: relative;
     overflow: hidden;
@@ -31,10 +31,10 @@
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    object-position: center center;
-    filter: brightness(88%) contrast(103%) saturate(94%);
-    transform: scale(1.015);
+    object-fit: cover;
+    object-position: center 28%;
+    filter: brightness(89%) contrast(102%) saturate(96%);
+    transform: scale(1.01);
     transform-origin: center;
     user-select: none;
     -webkit-user-drag: none;

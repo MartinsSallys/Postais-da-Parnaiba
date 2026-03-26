@@ -1,8 +1,7 @@
 .postais-home {
     padding: 104px 5% 92px;
-    background:
-        linear-gradient(180deg, rgba(241, 235, 223, 0.9) 0%, rgba(231, 225, 214, 0.92) 100%);
-}
+  background: var(--color-bg);
+        
 
 .postais-intro,
 .galeria-intro {

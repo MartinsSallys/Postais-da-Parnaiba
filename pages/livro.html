@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Conheça o livro Postais da Parnaíba e a proposta visual construída a partir do acervo histórico da cidade.">
+    <meta name="description" content="Página de venda do livro Postais da Parnaíba, uma obra visual e histórica dedicada à memória da cidade.">
     <title>Livro | Postais da Parnaíba</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/hero.css">
     <link rel="stylesheet" href="../css/livro.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/responsive.css">
@@ -19,7 +20,6 @@
         <h1 class="site-title">
             <a href="../index.html" class="logo">Postais da Parnaíba</a>
         </h1>
-
         <nav class="site-nav" aria-label="Navegação principal">
             <a href="../index.html">Home</a>
             <a href="galeria.html">Galeria</a>
@@ -29,33 +29,122 @@
         </nav>
     </header>
 
-    <main>
-        <section class="livro" aria-labelledby="livro-title">
-            <div class="conteiner-livro">
-                <h2 id="livro-title">Postais da Parnaíba</h2>
-                <div class="linha-livro"></div>
-
-                <div class="grid-livro">
-                    <div class="slider-livro" aria-label="Capas do livro">
-                        <img class="slide-livro ativo" src="../images/livro-capa.jpeg" alt="Capa frontal do livro Postais da Parnaíba">
-                        <img class="slide-livro" src="../images/livro-capa2.jpeg" alt="Segunda imagem da capa do livro Postais da Parnaíba">
+    <main class="livro-page">
+        <section class="livro-hero" aria-labelledby="livro-hero-title">
+            <div class="conteiner-livro livro-hero-grid">
+                <div class="livro-hero-media">
+                    <div class="livro-stack">
+                        <img class="livro-cover livro-cover-main" src="../images/livro-capa.jpeg" alt="Capa do livro Postais da Parnaíba">
+                        <img class="livro-cover livro-cover-secondary" src="../images/livro-capa2.jpeg" alt="Variação da capa do livro Postais da Parnaíba">
                     </div>
+                </div>
 
-                    <article class="livro-texto">
-                        <h3 class="livro-destaque">Sobre o Livro</h3>
+                <div class="livro-hero-copy">
+                    <p class="livro-kicker">Edição especial</p>
+                    <h2 id="livro-hero-title">Postais da Parnaíba</h2>
+                    <p class="livro-subtitle">Um livro para revisitar a cidade por meio de fotografias raras, memórias afetivas e registros históricos.</p>
+                    <p class="livro-lead">A obra reúne pesquisa, sensibilidade e patrimônio visual em uma edição pensada para leitores, pesquisadores e admiradores da história de Parnaíba.</p>
+                    <div class="livro-actions">
+                        <a href="#" class="btn">Comprar agora</a>
+                        <a href="#sobre-livro" class="btn livro-btn-secondary">Saiba mais</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                        <h3>Pesquisa Histórica</h3>
-                        <p>Nosso passeio começa a partir de uma pesquisa histórica minuciosa, que reuniu mais de <strong>700 fotografias antigas da cidade de Parnaíba</strong>.</p>
+        <section id="sobre-livro" class="livro-section livro-section-sobre" aria-labelledby="sobre-livro-title">
+            <div class="conteiner-livro livro-section-grid">
+                <div class="livro-copy-block">
+                    <h2 id="sobre-livro-title" class="section-title">Sobre o livro</h2>
+                    <div class="linha-livro"></div>
+                    <p>Postais da Parnaíba nasce de uma pesquisa histórica minuciosa, construída a partir de mais de 700 fotografias antigas, mapas, pinturas e cartões-postais reunidos em diferentes acervos institucionais e pessoais.</p>
+                    <p>Ao longo das páginas, o leitor encontra uma narrativa visual que conecta arquitetura, paisagem, vida cotidiana e memória social. O resultado é uma obra que apresenta a cidade com profundidade histórica e forte apelo afetivo.</p>
+                    <p>Além de documentar transformações urbanas, o livro convida à contemplação e à redescoberta de lugares marcantes para quem vive, pesquisa ou admira Parnaíba.</p>
+                </div>
 
-                        <h3>Acervos e Colaborações</h3>
-                        <p>Grande parte desse material foi reunida com o apoio do grupo <strong>Parnaíba das Antigas</strong>.</p>
+                <aside class="livro-benefits">
+                    <h3>Por que ler esta obra</h3>
+                    <ul class="livro-benefits-list">
+                        <li>Compreenda a história da cidade por meio de imagens e contexto.</li>
+                        <li>Tenha acesso a fotografias raras e registros de valor documental.</li>
+                        <li>Descubra detalhes da memória urbana de forma sensível e visual.</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
 
-                        <h3>Uma Jornada Visual</h3>
-                        <p>O livro conduz o leitor a uma jornada visual pelas transformações arquitetônicas.</p>
-
-                        <h3>Memória Compartilhada</h3>
-                        <p>Além de sua riqueza documental, a obra convida o leitor a uma experiência afetiva e visual com a cidade.</p>
+        <section class="livro-section livro-highlights" aria-labelledby="destaques-title">
+            <div class="conteiner-livro">
+                <h2 id="destaques-title" class="section-title">Destaques</h2>
+                <div class="linha-livro"></div>
+                <div class="livro-highlight-grid">
+                    <article class="livro-highlight-card">
+                        <h3>História da cidade</h3>
+                        <p>Uma leitura visual que aproxima o leitor dos processos históricos e urbanos de Parnaíba.</p>
                     </article>
+                    <article class="livro-highlight-card">
+                        <h3>Fotografias raras</h3>
+                        <p>Imagens selecionadas com valor documental e forte potência narrativa.</p>
+                    </article>
+                    <article class="livro-highlight-card">
+                        <h3>Conteúdo exclusivo</h3>
+                        <p>Pesquisa autoral organizada com cuidado editorial e sensibilidade histórica.</p>
+                    </article>
+                    <article class="livro-highlight-card">
+                        <h3>Material histórico</h3>
+                        <p>Uma obra pensada para consulta, contemplação e preservação da memória local.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="livro-section livro-preview" aria-labelledby="preview-title">
+            <div class="conteiner-livro">
+                <h2 id="preview-title" class="section-title">Preview</h2>
+                <div class="linha-livro"></div>
+                <div class="livro-preview-grid">
+                    <img src="../images/livro-capa.jpeg" alt="Capa do livro em destaque" loading="lazy">
+                    <img src="../images/livro-capa2.jpeg" alt="Segunda visualização da capa do livro" loading="lazy">
+                    <img src="../images/Captura de tela de 2026-03-12 14-58-14.png" alt="Imagem de referência do acervo visual do livro" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section class="livro-section livro-author" aria-labelledby="autor-livro-title">
+            <div class="conteiner-livro livro-author-grid">
+                <div class="livro-author-media">
+                    <img src="../images/autorJota.jpeg" alt="Retrato do autor Jedson Martins da Silva" loading="lazy">
+                </div>
+                <div class="livro-author-copy">
+                    <h2 id="autor-livro-title" class="section-title">Sobre o autor</h2>
+                    <div class="linha-livro livro-divider-left"></div>
+                    <p><strong>Jedson Martins da Silva</strong>, conhecido como <strong>Jota</strong>, é historiador, documentarista e produtor cultural. Seu trabalho articula memória, patrimônio e audiovisual com forte vínculo com a cidade de Parnaíba.</p>
+                    <p>Em Postais da Parnaíba, o autor transforma pesquisa e afeto em uma obra que honra trajetórias, paisagens e lembranças que seguem vivas no imaginário local.</p>
+                    <div class="livro-social">
+                        <a href="#" class="social-link" aria-label="Instagram do autor">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2Zm10.15 1.65a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/>
+                            </svg>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube do autor">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M21.6 7.2a2.95 2.95 0 0 0-2.08-2.08C17.73 4.6 12 4.6 12 4.6s-5.73 0-7.52.52A2.95 2.95 0 0 0 2.4 7.2 30.7 30.7 0 0 0 1.9 12a30.7 30.7 0 0 0 .5 4.8 2.95 2.95 0 0 0 2.08 2.08c1.79.52 7.52.52 7.52.52s5.73 0 7.52-.52a2.95 2.95 0 0 0 2.08-2.08 30.7 30.7 0 0 0 .5-4.8 30.7 30.7 0 0 0-.5-4.8ZM10.1 15.48V8.52L15.88 12Z"/>
+                            </svg>
+                            <span>YouTube</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="livro-section livro-cta" aria-labelledby="cta-title">
+            <div class="conteiner-livro livro-cta-box">
+                <h2 id="cta-title">Garanta seu exemplar</h2>
+                <p>Uma publicação pensada para quem valoriza memória, patrimônio e a beleza histórica de Parnaíba.</p>
+                <div class="livro-actions livro-actions-center">
+                    <a href="#" class="btn">Comprar agora</a>
+                    <a href="sobre.html" class="btn livro-btn-secondary">Saiba mais</a>
                 </div>
             </div>
         </section>
@@ -65,7 +154,5 @@
         <p>© 2026 Postais da Parnaíba</p>
         <p>Desenvolvido por Sallys Martins</p>
     </footer>
-
-    <script src="../js/script.js"></script>
 </body>
 </html>

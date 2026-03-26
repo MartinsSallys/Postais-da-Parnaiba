@@ -50,3 +50,41 @@
     filter: grayscale(0%);
     transform: translateY(-4px);
 }
+
+.autor-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border: 1px solid rgba(51, 39, 29, 0.2);
+    border-radius: 999px;
+    background: rgba(255, 251, 244, 0.85);
+    text-decoration: none;
+    box-shadow: 0 8px 18px rgba(44, 31, 20, 0.08);
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+    transform: translateY(-2px);
+    border-color: rgba(51, 39, 29, 0.36);
+    box-shadow: 0 12px 20px rgba(44, 31, 20, 0.12);
+}
+
+.social-link svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.social-link span {
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+}

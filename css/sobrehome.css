@@ -4,8 +4,8 @@
 
 .historia {
     padding: 80px 5%;
-    background: var(--color-bg);
-    animation: fadeUp 1s ease forwards;
+ background: var(--color-bg);   
+  animation: fadeUp 1s ease forwards;
 }
 
 .sobre-grid {
