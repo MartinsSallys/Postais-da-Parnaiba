@@ -75,3 +75,103 @@
 .postal-actions {
     text-align: center;
 }
+
+/* Antes e Depois */
+.antes-depois {
+    margin: 42px 0 30px;
+    padding: 18px 18px 14px;
+    border: 1px dashed rgba(76, 58, 40, 0.32);
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(255, 251, 244, 0.9) 0%, rgba(239, 227, 207, 0.9) 100%);
+    box-shadow: 0 10px 20px rgba(45, 33, 22, 0.12);
+}
+
+.antes-depois__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.antes-depois__subtitle {
+    margin: 4px 0 0;
+    color: var(--color-muted);
+}
+
+.antes-depois__content {
+    margin-top: 18px;
+}
+
+.before-after {
+    --position: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(76, 58, 40, 0.26);
+    box-shadow:
+        0 8px 16px rgba(44, 31, 20, 0.14),
+        0 0 0 6px rgba(255, 255, 255, 0.7) inset;
+    background: #fdf7ed;
+}
+
+.before-after__images {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+
+.before-after__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.before-after__img--after {
+    clip-path: polygon(0 0, var(--position) 0, var(--position) 100%, 0 100%);
+    transition: clip-path var(--transition-base);
+}
+
+.before-after__divider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(var(--position));
+    width: 2px;
+    background: rgba(54, 39, 27, 0.9);
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+    transition: left var(--transition-base);
+}
+
+.before-after__range {
+    width: 100%;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+}
+
+.before-after__labels {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 6px 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #3a281b;
+}
+
+@media (max-width: 720px) {
+    .before-after {
+        border-radius: 10px;
+    }
+
+    .before-after__images {
+        aspect-ratio: 3 / 4;
+    }
+}

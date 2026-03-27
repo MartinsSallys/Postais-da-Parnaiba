@@ -57,6 +57,30 @@
                 </div>
             </section>
 
+            <section class="antes-depois" aria-labelledby="antes-depois-title">
+                <div class="antes-depois__header">
+                    <div>
+                        <h3 id="antes-depois-title">Antes e Depois</h3>
+                        <p class="antes-depois__subtitle">Compare o postal histórico com o registro atual (placeholder).</p>
+                    </div>
+                    <button type="button" class="btn btn--secondary antes-depois__toggle" aria-expanded="false">Ver Antes e Depois</button>
+                </div>
+                <div class="antes-depois__content" hidden>
+                    <div class="before-after" data-label-before="Antes" data-label-after="Depois">
+                        <div class="before-after__images">
+                            <img src="../../images/cine-teatro-eden.png" alt="Cine-Teatro Éden - postal histórico" class="before-after__img before-after__img--before">
+                            <img src="../../images/cine-teatro-eden-atual.png" alt="Cine-Teatro Éden - foto atual" class="before-after__img before-after__img--after">
+                            <div class="before-after__divider" aria-hidden="true"></div>
+                        </div>
+                        <input type="range" min="0" max="100" value="50" class="before-after__range" aria-label="Controlar antes e depois">
+                        <div class="before-after__labels" aria-hidden="true">
+                            <span>Antes</span>
+                            <span>Depois</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <div class="postal-actions">
                 <a href="../galeria.html" class="btn btn--primary">Voltar para Galeria</a>
             </div>
@@ -67,5 +91,6 @@
         <p>© 2026 Postais da Parnaíba</p>
         <p>Desenvolvido por Sallys Martins</p>
     </footer>
+    <script src="../../js/antes-depois.js"></script>
 </body>
 </html>
