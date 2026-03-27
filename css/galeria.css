@@ -11,6 +11,13 @@
     margin: 0 auto;
 }
 
+/* Make gallery cards clickable while keeping image styling */
+.grid-galeria a {
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
 .grid-galeria img {
     width: 100%;
     height: 300px;
@@ -21,7 +28,7 @@
 }
 
 @media (hover: hover) {
-    .grid-galeria img:hover {
+    .grid-galeria a:hover img {
         transform: scale(1.03);
         box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
     }
