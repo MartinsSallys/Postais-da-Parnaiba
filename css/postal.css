@@ -170,6 +170,8 @@
 
 @media (max-width: 720px) {
     .before-after {
+        border: none;
+        box-shadow: 0 6px 12px rgba(44, 31, 20, 0.12);
         border-radius: 10px;
     }
 
@@ -177,12 +179,12 @@
         aspect-ratio: var(--media-ratio, 4 / 3);
         max-height: min(72vh, 520px);
         padding: 0;
-        background: transparent;
+        background: #fdf7ed;
     }
 
     .before-after__img {
         object-fit: contain;
-        background: transparent;
+        background: inherit;
     }
 
     .before-after__labels {

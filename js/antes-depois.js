@@ -33,11 +33,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 const afterReady = afterImg && afterImg.naturalWidth && afterImg.naturalHeight;
                 const beforeReady = beforeImg && beforeImg.naturalWidth && beforeImg.naturalHeight;
 
-                const ratio = afterReady
-                    ? afterImg.naturalWidth / afterImg.naturalHeight
-                    : beforeReady
-                        ? beforeImg.naturalWidth / beforeImg.naturalHeight
-                        : null;
+                let ratio = null;
+                if (beforeReady && afterReady) {
+                    // Média suaviza diferenças e reduz faixas visíveis em ambas as imagens
+                    ratio = (beforeImg.naturalWidth / beforeImg.naturalHeight + afterImg.naturalWidth / afterImg.naturalHeight) / 2;
+                } else if (afterReady) {
+                    ratio = afterImg.naturalWidth / afterImg.naturalHeight;
+                } else if (beforeReady) {
+                    ratio = beforeImg.naturalWidth / beforeImg.naturalHeight;
+                }
 
                 if (ratio) {
                     imageWrapper.style.setProperty("--media-ratio", ratio.toFixed(4));
@@ -54,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
-            // Define a proporção dando prioridade à imagem atual (after) para minimizar faixas vazias em mobile
+            // Define a proporção média para reduzir faixas em ambas as imagens (antes e depois)
             [beforeImg, afterImg].forEach((img) => {
                 if (!img) return;
                 if (img.complete) {
