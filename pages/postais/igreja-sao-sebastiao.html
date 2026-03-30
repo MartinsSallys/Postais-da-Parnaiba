@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Postal histórico da Igreja São Sebastião e seu registro contemporâneo em Parnaíba.">
+    <title>Igreja São Sebastião | Postais da Parnaíba</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/hero.css">
+    <link rel="stylesheet" href="../../css/postal.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+</head>
+<body>
+    <header class="site-header">
+        <h1 class="site-title">
+            <a href="../../index.html" class="logo">Postais da Parnaíba</a>
+        </h1>
+        <nav class="site-nav" aria-label="Navegação principal">
+            <a href="../../index.html">Home</a>
+            <a href="../galeria.html">Galeria</a>
+            <a href="../livro.html">Livro</a>
+            <a href="../blog.html">Blog</a>
+            <a href="../sobre.html">Sobre</a>
+        </nav>
+    </header>
+
+    <main class="postal-page">
+        <section class="postal-hero">
+            <div class="postal-banner">
+                <img src="../../images/postal-antigo-02.png" alt="Igreja São Sebastião em postal histórico" loading="eager">
+            </div>
+        </section>
+
+        <section class="postal-content" aria-labelledby="postal-title">
+            <header class="postal-heading">
+                <h2 id="postal-title">Igreja São Sebastião</h2>
+                <p class="postal-subtitle">Parnaíba - devoção, praça e circulação</p>
+            </header>
+
+            <div class="postal-text">
+                <p>A Igreja São Sebastião é um dos marcos religiosos e afetivos de Parnaíba. Localizada junto à praça homônima, sua fachada acolhe celebrações, encontros cotidianos e memórias que atravessam gerações.</p>
+                <p>O postal registra a relação entre arquitetura, fé e vida urbana: um templo aberto para o fluxo da cidade, que permanece como referência simbólica e paisagística no coração do bairro.</p>
+            </div>
+
+            <section class="postal-gallery" aria-labelledby="postal-gallery-title">
+                <h3 id="postal-gallery-title" class="section-title">Imagens relacionadas</h3>
+                <div class="linha"></div>
+                <div class="postal-gallery-grid">
+                    <img src="../../images/postal-antigo-02.png" alt="Detalhe da fachada antiga da Igreja São Sebastião" loading="lazy">
+                    <img src="../../images/postal-antigo-02-atual.png" alt="Igreja São Sebastião em registro contemporâneo" loading="lazy">
+                    <img src="../../images/centro-historico-arquitetura.png" alt="Arquitetura histórica próxima à Igreja São Sebastião" loading="lazy">
+                </div>
+            </section>
+
+            <section class="antes-depois" aria-labelledby="antes-depois-title">
+                <div class="antes-depois__header">
+                    <div>
+                        <h3 id="antes-depois-title">Antes e Depois</h3>
+                        <p class="antes-depois__subtitle">Veja a igreja histórica e sua aparência atual.</p>
+                    </div>
+                    <button type="button" class="btn btn--secondary antes-depois__toggle" aria-expanded="false">Ver Antes e Depois</button>
+                </div>
+                <div class="antes-depois__content" hidden>
+                    <div class="before-after" data-label-before="Antes" data-label-after="Depois">
+                        <div class="before-after__images">
+                            <img src="../../images/postal-antigo-02.png" alt="Igreja São Sebastião - postal histórico" class="before-after__img before-after__img--before">
+                            <img src="../../images/postal-antigo-02-atual.png" alt="Igreja São Sebastião - foto atual" class="before-after__img before-after__img--after">
+                            <div class="before-after__divider" aria-hidden="true"></div>
+                        </div>
+                        <input type="range" min="0" max="100" value="50" class="before-after__range" aria-label="Controlar antes e depois">
+                        <div class="before-after__labels" aria-hidden="true">
+                            <span>Antes</span>
+                            <span>Depois</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="postal-actions">
+                <a href="../galeria.html" class="btn btn--primary">Voltar para Galeria</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 Postais da Parnaíba</p>
+        <p>Desenvolvido por Sallys Martins</p>
+    </footer>
+    <script src="../../js/antes-depois.js"></script>
+</body>
+</html>
