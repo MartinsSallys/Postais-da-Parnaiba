@@ -118,11 +118,13 @@
     background: #fdf7ed;
 }
 
+
 .before-after__images {
     position: relative;
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: var(--media-ratio, 4 / 3);
     overflow: hidden;
+    background: #f7efe3;
 }
 
 .before-after__img {
@@ -172,6 +174,18 @@
     }
 
     .before-after__images {
-        aspect-ratio: 3 / 4;
+        aspect-ratio: var(--media-ratio, 4 / 3);
+        max-height: min(72vh, 520px);
+        padding: 10px;
+    }
+
+    .before-after__img {
+        object-fit: contain;
+        background: #f7efe3;
+    }
+
+    .before-after__labels {
+        font-size: 0.9rem;
+        letter-spacing: 0.06em;
     }
 }

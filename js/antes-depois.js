@@ -22,8 +22,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         section.querySelectorAll(".before-after").forEach((component) => {
             const range = component.querySelector(".before-after__range");
+            const beforeImg = component.querySelector(".before-after__img--before");
             const afterImg = component.querySelector(".before-after__img--after");
             const divider = component.querySelector(".before-after__divider");
+            const imageWrapper = component.querySelector(".before-after__images");
+
+            function setAspectRatio(img) {
+                if (!img || !imageWrapper || !img.naturalWidth || !img.naturalHeight) return;
+                const ratio = (img.naturalWidth / img.naturalHeight).toFixed(4);
+                imageWrapper.style.setProperty("--media-ratio", ratio);
+            }
 
             function updatePosition(value) {
                 component.style.setProperty("--position", `${value}%`);
@@ -32,6 +40,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
                 if (afterImg) {
                     afterImg.style.clipPath = `polygon(0 0, ${value}% 0, ${value}% 100%, 0 100%)`;
+                }
+            }
+
+            // Define a proporção real da imagem base para evitar cortes em telas estreitas
+            const ratioSource = beforeImg || afterImg;
+            if (ratioSource) {
+                if (ratioSource.complete) {
+                    setAspectRatio(ratioSource);
+                } else {
+                    ratioSource.addEventListener("load", () => setAspectRatio(ratioSource), { once: true });
                 }
             }
 
