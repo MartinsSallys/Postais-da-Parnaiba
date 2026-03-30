@@ -27,10 +27,21 @@ document.addEventListener("DOMContentLoaded", () => {
             const divider = component.querySelector(".before-after__divider");
             const imageWrapper = component.querySelector(".before-after__images");
 
-            function setAspectRatio(img) {
-                if (!img || !imageWrapper || !img.naturalWidth || !img.naturalHeight) return;
-                const ratio = (img.naturalWidth / img.naturalHeight).toFixed(4);
-                imageWrapper.style.setProperty("--media-ratio", ratio);
+            function setWrapperRatio() {
+                if (!imageWrapper) return;
+
+                const afterReady = afterImg && afterImg.naturalWidth && afterImg.naturalHeight;
+                const beforeReady = beforeImg && beforeImg.naturalWidth && beforeImg.naturalHeight;
+
+                const ratio = afterReady
+                    ? afterImg.naturalWidth / afterImg.naturalHeight
+                    : beforeReady
+                        ? beforeImg.naturalWidth / beforeImg.naturalHeight
+                        : null;
+
+                if (ratio) {
+                    imageWrapper.style.setProperty("--media-ratio", ratio.toFixed(4));
+                }
             }
 
             function updatePosition(value) {
@@ -43,15 +54,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
-            // Define a proporção real da imagem base para evitar cortes em telas estreitas
-            const ratioSource = beforeImg || afterImg;
-            if (ratioSource) {
-                if (ratioSource.complete) {
-                    setAspectRatio(ratioSource);
+            // Define a proporção dando prioridade à imagem atual (after) para minimizar faixas vazias em mobile
+            [beforeImg, afterImg].forEach((img) => {
+                if (!img) return;
+                if (img.complete) {
+                    setWrapperRatio();
                 } else {
-                    ratioSource.addEventListener("load", () => setAspectRatio(ratioSource), { once: true });
+                    img.addEventListener("load", setWrapperRatio, { once: true });
                 }
-            }
+            });
+            // Chamado caso nenhuma imagem dispare evento (cache)
+            setWrapperRatio();
 
             if (range) {
                 updatePosition(range.value);
