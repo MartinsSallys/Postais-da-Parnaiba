@@ -1,5 +1,9 @@
 # Postais da Parnaíba
 
+## Administração
+
+Os arquivos de administração foram adicionados em [admin/login.html](admin/login.html), [admin/index.html](admin/index.html), [admin/app.js](admin/app.js) e [admin/styles.css](admin/styles.css).
+
 Um projeto autoral de memória, cultura e preservação histórica sobre a cidade de Parnaíba, desenvolvido como uma experiência digital inspirada em postais antigos, registros fotográficos, crônicas e no futuro livro **Postais da Parnaíba**.
 
 ## Sobre o Projeto

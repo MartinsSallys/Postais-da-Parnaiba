@@ -50,43 +50,8 @@
                     <a class="btn btn--secondary" href="#linha-do-tempo">Ver Linha do Tempo</a>
                 </div>
 
-                <div class="grid-galeria">
-                    <a href="mercado-publico.html">
-                        <img src="../images/santa-casa-misericordia.png" alt="Santa Casa de Misericórdia em 1955" loading="lazy">
-                    </a>
-                    <a href="postais/cine-teatro-eden.html">
-                        <img src="../images/cine-teatro-eden.png" alt="Fachada do Cine-Teatro Éden em 1928" loading="lazy">
-                    </a>
-                    <a href="postais/ginasio-sao-luiz-gonzaga.html">
-                        <img src="../images/ginasio-sao-luiz-gonzaga.png" alt="Ginásio São Luiz Gonzaga em registro histórico" loading="lazy">
-                    </a>
-                    <a href="postais/rua-lima-rebelo.html">
-                        <img src="../images/rua-lima-rebelo.png" alt="Rua Lima Rebelo com detalhes do Edifício Leão nos anos 40" loading="lazy">
-                    </a>
-                    <a href="porto-das-barcas.html">
-                        <img src="../images/porto-das-barcas.png" alt="Porto das Barcas e Alfândega de Parnaíba nos anos 40" loading="lazy">
-                    </a>
-                    <a href="delta-do-parnaiba.html">
-                        <img src="../images/delta-do-parnaiba.png" alt="Lavadeiras no Rio Igaraçu nos anos 40" loading="lazy">
-                    </a>
-                    <a href="postal-antigo.html">
-                        <img src="../images/postal-antigo-01.png" alt="Postal antigo com vista urbana de Parnaíba" loading="lazy">
-                    </a>
-                    <a href="postais/igreja-sao-sebastiao.html">
-                        <img src="../images/postal-antigo-02.png" alt="Igreja São Sebastião em postal antigo" loading="lazy">
-                    </a>
-                    <a href="centro-historico.html">
-                        <img src="../images/centro-historico-arquitetura.png" alt="Arquitetura histórica de Parnaíba" loading="lazy">
-                    </a>
-                    <a href="centro-historico.html">
-                        <img src="../images/centro-historico-cena-urbana.png" alt="Cena urbana antiga da cidade de Parnaíba" loading="lazy">
-                    </a>
-                    <a href="postais/praca-da-graca.html">
-                        <img src="../images/praca-da-graca.jpg" alt="Praça da Graça em fotografia contemporânea" loading="lazy">
-                    </a>
-                    <a href="postais/acervo-visual.html">
-                        <img src="../images/acervo-visual.png" alt="Acervo visual sobre a história de Parnaíba" loading="lazy">
-                    </a>
+                <div class="grid-galeria" id="dynamic-gallery">
+                    <div class="loading-spinner">Carregando postais...</div>
                 </div>
             </div>
         </section>
@@ -99,181 +64,8 @@
                     Visualize os postais por décadas e explore como Parnaíba se transforma ao longo dos anos.
                 </p>
 
-                <div class="timeline-decade">
-                    <div class="timeline-decade__header">
-                        <h3>1900–1920</h3>
-                        <p>Recortes iniciais da urbanização e das primeiras fachadas registradas.</p>
-                    </div>
-                    <div class="timeline-grid">
-                        <a class="timeline-card" href="postal-antigo.html">
-                            <div class="timeline-card__image">
-                                <img src="../images/postal-antigo-01.png" alt="Cartão postal antigo de Parnaíba">
-                                <div class="timeline-card__overlay">
-                                    <span class="timeline-card__credit">Créditos: Acervo Postais da Parnaíba</span>
-                                    <span class="timeline-card__year">1915</span>
-                                    <p class="timeline-card__desc">Postal que mostra a paisagem urbana em início de século.</p>
-                                </div>
-                            </div>
-                            <div class="timeline-card__label">Postal Antigo</div>
-                        </a>
-                        <a class="timeline-card" href="postais/igreja-sao-sebastiao.html">
-                            <div class="timeline-card__image">
-                                <img src="../images/postal-antigo-02.png" alt="Igreja São Sebastião em registro antigo">
-                                <div class="timeline-card__overlay">
-                                    <span class="timeline-card__credit">Créditos: Acervo Postais da Parnaíba</span>
-                                    <span class="timeline-card__year">1918</span>
-                                    <p class="timeline-card__desc">Postal destacando a fachada e o entorno da Igreja São Sebastião.</p>
-                                </div>
-                            </div>
-                            <div class="timeline-card__label">Igreja São Sebastião</div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="timeline-decade">
-                    <div class="timeline-decade__header">
-                        <h3>1920–1940</h3>
-                        <p>Espaços culturais e educacionais ganham protagonismo.</p>
-                    </div>
-                    <div class="timeline-grid">
-                        <a class="timeline-card" href="postais/cine-teatro-eden.html">
-                            <div class="timeline-card__image">
-                                <img src="../images/cine-teatro-eden.png" alt="Fachada do Cine-Teatro Éden em 1928">
-                                <div class="timeline-card__overlay">
-                                    <span class="timeline-card__credit">Créditos: Acervo Postais da Parnaíba</span>
-                                    <span class="timeline-card__year">1928</span>
-                                    <p class="timeline-card__desc">Cine-Teatro Éden como ponto cultural da cidade.</p>
-                                </div>
-                            </div>
-                            <div class="timeline-card__label">Cine-Teatro Éden</div>
-                        </a>
-                        <a class="timeline-card" href="postais/ginasio-sao-luiz-gonzaga.html">
-                            <div class="timeline-card__image">
-                                <img src="../images/ginasio-sao-luiz-gonzaga.png" alt="Ginásio São Luiz Gonzaga">
-                                <div class="timeline-card__overlay">
-                                    <span class="timeline-card__credit">Créditos: Acervo Postais da Parnaíba</span>
-                                    <span class="timeline-card__year">1936</span>
-                                    <p class="timeline-card__desc">Registro do ginásio, referência em educação.</p>
-                                </div>
-                            </div>
-                            <div class="timeline-card__label">Ginásio São Luiz Gonzaga</div>
-                        </a>
-                        <a class="timeline-card" href="centro-historico.html">
-                            <div class="timeline-card__image">
-                                <img src="../images/centro-historico-arquitetura.png" alt="Arquitetura histórica do centro de Parnaíba">
-                                <div class="timeline-card__overlay">
-                                    <span class="timeline-card__credit">Créditos: Acervo Postais da Parnaíba</span>
-                                    <span class="timeline-card__year">1932</span>
-                                    <p class="timeline-card__desc">Centro histórico com fachadas preservadas.</p>
-                                </div>
-                            </div>
-                            <div class="timeline-card__label">Centro Histórico</div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="timeline-decade">
-                    <div class="timeline-decade__header">
-                        <h3>1940–1960</h3>
-                        <p>Período de intensa circulação comercial e crescimento urbano.</p>
-                    </div>
-                    <div class="timeline-grid">
-                        <a class="timeline-card" href="mercado-publico.html">
-                            <div class="timeline-card__image">
-                                <img src="../images/santa-casa-misericordia.png" alt="Santa Casa de Misericórdia">
-                                <div class="timeline-card__overlay">
-                                    <span class="timeline-card__credit">Créditos: Acervo Postais da Parnaíba</span>
-                                    <span class="timeline-card__year">1955</span>
-                                    <p class="timeline-card__desc">Santa Casa de Misericórdia atendendo a comunidade.</p>
-                                </div>
-                            </div>
-                            <div class="timeline-card__label">Santa Casa de Misericórdia</div>
-                        </a>
-                        <a class="timeline-card" href="porto-das-barcas.html">
-                            <div class="timeline-card__image">
-                                <img src="../images/porto-das-barcas.png" alt="Porto das Barcas">
-                                <div class="timeline-card__overlay">
-                                    <span class="timeline-card__credit">Créditos: Acervo Postais da Parnaíba</span>
-                                    <span class="timeline-card__year">1942</span>
-                                    <p class="timeline-card__desc">Porto das Barcas e Alfândega em pleno funcionamento.</p>
-                                </div>
-                            </div>
-                            <div class="timeline-card__label">Porto das Barcas</div>
-                        </a>
-                        <a class="timeline-card" href="postais/rua-lima-rebelo.html">
-                            <div class="timeline-card__image">
-                                <img src="../images/rua-lima-rebelo.png" alt="Rua Lima Rebelo">
-                                <div class="timeline-card__overlay">
-                                    <span class="timeline-card__credit">Créditos: Acervo Postais da Parnaíba</span>
-                                    <span class="timeline-card__year">1948</span>
-                                    <p class="timeline-card__desc">Movimento urbano na Rua Lima Rebelo.</p>
-                                </div>
-                            </div>
-                            <div class="timeline-card__label">Rua Lima Rebelo</div>
-                        </a>
-                        <a class="timeline-card" href="delta-do-parnaiba.html">
-                            <div class="timeline-card__image">
-                                <img src="../images/delta-do-parnaiba.png" alt="Lavadeiras no Rio Igaraçu">
-                                <div class="timeline-card__overlay">
-                                    <span class="timeline-card__credit">Créditos: Acervo Postais da Parnaíba</span>
-                                    <span class="timeline-card__year">1950</span>
-                                    <p class="timeline-card__desc">Cena ribeirinha no Delta do Parnaíba.</p>
-                                </div>
-                            </div>
-                            <div class="timeline-card__label">Delta do Parnaíba</div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="timeline-decade">
-                    <div class="timeline-decade__header">
-                        <h3>1960–1980</h3>
-                        <p>Espaços urbanos se modernizam, mantendo vínculos com o passado.</p>
-                    </div>
-                    <div class="timeline-grid">
-                        <a class="timeline-card" href="centro-historico.html">
-                            <div class="timeline-card__image">
-                                <img src="../images/centro-historico-cena-urbana.png" alt="Cena urbana antiga de Parnaíba">
-                                <div class="timeline-card__overlay">
-                                    <span class="timeline-card__credit">Créditos: Acervo Postais da Parnaíba</span>
-                                    <span class="timeline-card__year">1968</span>
-                                    <p class="timeline-card__desc">Centro histórico conectando gerações.</p>
-                                </div>
-                            </div>
-                            <div class="timeline-card__label">Centro Histórico</div>
-                        </a>
-                        <a class="timeline-card" href="postais/acervo-visual.html">
-                            <div class="timeline-card__image">
-                                <img src="../images/acervo-visual.png" alt="Acervo visual">
-                                <div class="timeline-card__overlay">
-                                    <span class="timeline-card__credit">Créditos: Acervo Postais da Parnaíba</span>
-                                    <span class="timeline-card__year">1975</span>
-                                    <p class="timeline-card__desc">Coleção de imagens que preserva o cotidiano.</p>
-                                </div>
-                            </div>
-                            <div class="timeline-card__label">Acervo Visual</div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="timeline-decade">
-                    <div class="timeline-decade__header">
-                        <h3>1980–2000</h3>
-                        <p>Novas perspectivas e paisagens contemporâneas ganham espaço.</p>
-                    </div>
-                    <div class="timeline-grid">
-                        <a class="timeline-card" href="postais/praca-da-graca.html">
-                            <div class="timeline-card__image">
-                                <img src="../images/praca-da-graca.jpg" alt="Praça da Graça em fotografia contemporânea">
-                                <div class="timeline-card__overlay">
-                                    <span class="timeline-card__credit">Créditos: Acervo Postais da Parnaíba</span>
-                                    <span class="timeline-card__year">1992</span>
-                                    <p class="timeline-card__desc">Praça da Graça como ponto de convivência afetiva.</p>
-                                </div>
-                            </div>
-                            <div class="timeline-card__label">Praça da Graça</div>
-                        </a>
-                    </div>
+                <div id="dynamic-timeline">
+                    <div class="loading-spinner">Carregando eventos...</div>
                 </div>
             </div>
         </section>
@@ -283,5 +75,6 @@
         <p>© 2026 Postais da Parnaíba</p>
         <p>Desenvolvido por Sallys Martins</p>
     </footer>
+    <script src="../js/galeria.js"></script>
 </body>
 </html>
