@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Postal histórico de Parnaíba - Postais da Parnaíba.">
+    <title>Postal | Postais da Parnaíba</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/hero.css">
+    <link rel="stylesheet" href="../css/postal.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <header class="site-header" id="site-header">
+        <div class="site-header__inner">
+            <a href="../index.html" class="site-header__logo"><span class="site-header__logo-icon">✦</span>
+                
+                <span class="site-header__logo-text">Postais da Parnaíba</span>
+            </a>
+
+            <button class="site-header__toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="site-nav" id="main-nav" aria-label="Navegação principal">
+                <a href="../index.html">Início</a>
+                <a href="galeria.html">Galeria</a>
+                <a href="livro.html">Livro</a>
+                <a href="blog.html">Blog</a>
+                <a href="sobre.html">Sobre</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="postal-page" id="postal-content">
+        <p class="loading-spinner">Carregando postal...</p>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <div class="site-footer__brand">
+                <span class="site-footer__logo">✦ Postais da Parnaíba</span>
+                <p>Museu digital de memória visual da cidade de Parnaíba.</p>
+            </div>
+            <div class="site-footer__links">
+                <a href="galeria.html">Galeria</a>
+                <a href="livro.html">Livro</a>
+                <a href="sobre.html">Sobre</a>
+            </div>
+            <div class="site-footer__bottom">
+                <p>© 2026 Postais da Parnaíba — Desenvolvido por Sallys Martins</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/public.js"></script>
+    <script>
+    (async function() {
+        var container = document.getElementById("postal-content");
+        var id = getQueryParam("id");
+        if (!id) {
+            container.innerHTML = '<p>Postal não encontrado.</p>';
+            return;
+        }
+        try {
+            var postal = await fetchJson("/postais/" + id);
+            var imgUrl = getImageUrl(postal.imagem_url, "..");
+            document.title = escapeHtml(postal.titulo) + " | Postais da Parnaíba";
+            container.innerHTML =
+                '<section class="postal-hero">' +
+                '  <div class="postal-banner">' +
+                '    <img src="' + imgUrl + '" alt="' + escapeHtml(postal.titulo) + '" loading="eager">' +
+                '  </div>' +
+                '</section>' +
+                '<section class="postal-content" aria-labelledby="postal-title">' +
+                '  <header class="postal-heading">' +
+                '    <h2 id="postal-title">' + escapeHtml(postal.titulo) + '</h2>' +
+                '    <p class="postal-subtitle">' + escapeHtml(postal.localizacao || "") + (postal.epoca ? " — " + escapeHtml(postal.epoca) : "") + '</p>' +
+                '  </header>' +
+                '  <div class="postal-text">' +
+                '    <p>' + escapeHtml(postal.descricao || "") + '</p>' +
+                '  </div>' +
+                '  <div class="postal-actions">' +
+                '    <a href="galeria.html" class="btn btn--primary">Voltar para Galeria</a>' +
+                '  </div>' +
+                '</section>';
+        } catch (e) {
+            container.innerHTML = '<p>Postal não encontrado.</p>';
+        }
+    })();
+    </script>
+</body>
+</html>

@@ -1,7 +1,7 @@
+/* About/Author Page */
 .Autor {
-    padding: 100px 20px;
+    padding: var(--spacing-4xl) 20px;
     background: var(--color-surface);
-    animation: fadeUp 1s ease;
 }
 
 .container-autor {
@@ -35,19 +35,20 @@
 
 .autor-destaque {
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 500;
+    font-family: var(--font-display);
 }
 
 .autor-imagem img {
     width: 100%;
-    border-radius: 8px;
-    filter: grayscale(100%);
-    transition: transform var(--transition-base), filter var(--transition-base);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.92);
+    border-radius: var(--radius-lg);
+    filter: grayscale(20%) sepia(5%);
+    transition: filter var(--transition-slow), transform var(--transition-slow);
+    box-shadow: var(--shadow-strong);
 }
 
 .autor-imagem img:hover {
-    filter: grayscale(0%);
+    filter: grayscale(0%) sepia(0%);
     transform: translateY(-4px);
 }
 
@@ -56,4 +57,23 @@
     flex-wrap: wrap;
     gap: 14px;
     margin-top: 28px;
+}
+
+@media (max-width: 768px) {
+    .sobre-gride-autor {
+        grid-template-columns: 1fr;
+    }
+
+    .autor-texto {
+        text-align: center;
+    }
+
+    .autor-imagem {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .autor-social {
+        justify-content: center;
+    }
 }

@@ -1,377 +1,167 @@
+/* Responsive */
 @media (max-width: 1024px) {
-    .grid-galeria {
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    }
-
     .postal-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    .postal-gallery-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .livro-highlight-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .livro-preview-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .livro-hero {
-        padding: 56px 20px 48px;
-    }
-
-    .livro-section {
-        padding: 60px 20px;
-    }
-
-    .livro-hero-grid,
-    .livro-section-grid,
-    .livro-author-grid {
-        gap: 36px;
-    }
-
-    .livro-stack {
-        width: min(100%, 380px);
-    }
-
-    .livro-hero-copy h2 {
-        font-size: clamp(2.2rem, 4vw, 3.3rem);
-    }
-
-    .livro-subtitle {
-        font-size: 1.08rem;
-    }
-
-    .slider {
-        height: clamp(420px, 64vh, 620px);
+    .hero__title {
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
     }
 }
 
 @media (max-width: 768px) {
     :root {
-        --header-height: 116px;
+        --header-height: 64px;
     }
 
-    .site-header {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        padding-inline: 20px;
+    .site-header__toggle {
+        display: flex;
     }
 
     .site-nav {
-        justify-content: center;
-        gap: 12px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 280px;
+        height: 100vh;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        padding: 80px 24px 40px;
+        background: var(--color-dark);
+        transform: translateX(100%);
+        transition: transform var(--transition-base);
+        box-shadow: -8px 0 32px rgba(0, 0, 0, 0.3);
     }
 
-    .hero-text {
-        left: 24px;
-        bottom: 12%;
-        max-width: calc(100% - 48px);
+    .site-nav.is-open {
+        transform: translateX(0);
     }
 
-    .sobre-grid,
-    .sobre-gride-autor,
-    .grid-blog,
-    .livro-hero-grid,
-    .livro-section-grid,
-    .livro-author-grid {
+    .site-nav a {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 1.05rem;
+    }
+
+    .hero {
+        height: clamp(70vh, 80vh, 90vh);
+        min-height: 500px;
+    }
+
+    .hero__content {
+        padding: 0 5% 48px;
+    }
+
+    .hero__title {
+        font-size: clamp(2.2rem, 10vw, 3.5rem);
+    }
+
+    .sobre-grid {
         grid-template-columns: 1fr;
+        gap: 36px;
     }
 
-    .postal-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .postal-gallery-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .texto,
-    .livro-texto,
-    .autor-texto,
-    .livro-copy-block,
-    .livro-author-copy,
-    .livro-hero-copy {
+    .texto {
         text-align: center;
     }
 
-    .imagem,
-    .autor-imagem {
+    .texto .destaque {
+        border-left: none;
+        padding-left: 0;
+        border-top: 2px solid var(--color-accent);
+        padding-top: 20px;
+    }
+
+    .imagem {
         max-width: 500px;
         margin: 0 auto;
     }
 
-    .autor-social,
-    .livro-social,
-    .livro-actions {
-        justify-content: center;
+    .postal-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .livro-divider-left {
-        margin-inline: auto;
+    .stats-bar__divider {
+        display: none;
     }
 
-    .livro-preview-grid {
-        grid-template-columns: 1fr;
+    .stats-bar__grid {
+        gap: 24px;
     }
 
-    .livro-hero {
-        padding: 42px 20px 36px;
-    }
-
-    .livro-section {
-        padding: 48px 20px;
-    }
-
-    .livro-stack {
-        width: min(100%, 320px);
-        padding: 18px 18px 0 0;
-    }
-
-    .livro-cover-secondary {
-        width: 38%;
-        right: 0;
-        bottom: -10px;
-        border-width: 4px;
-    }
-
-    .livro-hero-copy h2 {
-        font-size: clamp(2rem, 8vw, 3rem);
-        line-height: 1.05;
-        margin-bottom: 12px;
-    }
-
-    .livro-kicker {
-        font-size: 0.8rem;
-        letter-spacing: 0.14em;
-    }
-
-    .livro-subtitle {
-        font-size: 1.02rem;
-        margin-bottom: 14px;
-    }
-
-    .livro-lead,
-    .livro-copy-block p,
-    .livro-author-copy p,
-    .livro-highlight-card p,
-    .livro-cta-box p,
-    .livro-benefits-list li {
-        font-size: 0.98rem;
-        line-height: 1.75;
-    }
-
-    .livro-benefits {
-        padding: 24px 20px;
-        border-radius: 16px;
-    }
-
-    .livro-benefits h3,
-    .livro-highlight-card h3 {
-        font-size: 1.2rem;
-    }
-
-    .livro-preview-grid img {
-        max-width: 460px;
-        margin: 0 auto;
-    }
-
-    .livro-author-media img {
-        max-width: 420px;
-        margin: 0 auto;
-    }
-
-    .livro-cta {
-        padding-top: 8px;
-        padding-bottom: 64px;
-    }
-
-    .livro-cta-box {
-        padding: 32px 24px;
-    }
-
-    .slider {
-        height: clamp(360px, 58vh, 500px);
-    }
-
-    .slide img {
-        object-position: center center;
+    .cta-card {
+        padding: 40px 24px;
     }
 }
 
 @media (max-width: 480px) {
-    :root {
-        --header-height: 136px;
+    .site-nav {
+        width: 100%;
     }
 
-    body {
-        padding-top: var(--header-height);
+    .hero {
+        height: clamp(60vh, 75vh, 85vh);
+        min-height: 450px;
     }
 
-    .site-nav a {
-        font-size: 0.92rem;
+    .hero__badge {
+        font-size: 0.65rem;
     }
 
-    .slider {
-        height: clamp(320px, 52vh, 390px);
+    .hero__title {
+        font-size: clamp(2rem, 12vw, 3rem);
     }
 
-    .livro-hero {
-        padding: 28px 16px 28px;
+    .hero__subtitle {
+        font-size: 0.95rem;
     }
 
-    .livro-section {
-        padding: 36px 16px;
+    .hero__actions {
+        flex-direction: column;
     }
 
-    .livro-hero-grid,
-    .livro-section-grid,
-    .livro-author-grid {
-        gap: 26px;
-    }
-
-    .livro-stack {
-        width: min(100%, 260px);
-        padding: 12px 12px 0 0;
-    }
-
-    .livro-cover {
-        border-radius: 14px;
-    }
-
-    .livro-cover-secondary {
-        width: 40%;
-        bottom: -6px;
-        border-width: 3px;
-    }
-
-    .livro-hero-copy h2 {
-        font-size: clamp(1.85rem, 8.4vw, 2.5rem);
-    }
-
-    .livro-subtitle {
-        font-size: 0.97rem;
-    }
-
-    .livro-lead,
-    .livro-copy-block p,
-    .livro-author-copy p,
-    .livro-highlight-card p,
-    .livro-cta-box p,
-    .livro-benefits-list li {
-        font-size: 0.94rem;
-        line-height: 1.7;
-    }
-
-    .livro-copy-block .section-title,
-    .livro-author-copy .section-title,
-    .livro-cta-box h2,
-    #destaques-title,
-    #preview-title {
-        font-size: clamp(1.7rem, 7vw, 2.2rem);
-    }
-
-    .livro-highlight-card,
-    .livro-benefits,
-    .livro-cta-box {
-        padding: 22px 18px;
-    }
-
-    .livro-actions {
-        gap: 10px;
-    }
-
-    .navegacao {
-        bottom: 14px;
-        gap: 8px;
-    }
-
-    .navegacao label {
-        width: 20px;
-        height: 5px;
-    }
-
-    #s1:checked ~ .navegacao label[for="s1"],
-    #s2:checked ~ .navegacao label[for="s2"],
-    #s3:checked ~ .navegacao label[for="s3"],
-    #s4:checked ~ .navegacao label[for="s4"],
-    #s5:checked ~ .navegacao label[for="s5"] {
-        width: 35px;
-    }
-
-    .galeria-home,
-    .historia,
-    .blog,
-    .livro,
-    .Autor,
-    .postal-hero,
-    .postal-content,
-    .postais-home {
-        padding-inline: 15px;
-    }
-
-    .grid-galeria {
-        grid-template-columns: 1fr;
+    .hero__actions .btn {
+        width: 100%;
     }
 
     .postal-grid {
         grid-template-columns: 1fr;
+        gap: 18px;
     }
 
-    .livro-highlight-grid {
-        grid-template-columns: 1fr;
+    .section-header__title {
+        font-size: clamp(1.6rem, 6vw, 2.2rem);
     }
 
-    .grid-galeria img {
-        height: 250px;
+    .section-header__desc {
+        font-size: 0.95rem;
     }
 
-    .postal-card-link,
-    .livro-actions .btn {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        min-height: 48px;
-        justify-content: center;
+    .stats-bar {
+        padding: 28px 5%;
+    }
+
+    .stats-bar__item {
+        padding: 0 20px;
+    }
+
+    .galeria-home,
+    .historia,
+    .postais-home,
+    .chronicles-home,
+    .cta-section {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
 
 @media (max-width: 360px) {
-    :root {
-        --header-height: 150px;
+    .hero__title {
+        font-size: 1.8rem;
     }
 
-    .slider {
-        height: 300px;
-    }
-
-    .livro-hero {
-        padding-top: 22px;
-    }
-
-    .livro-stack {
-        width: min(100%, 230px);
-    }
-
-    .livro-hero-copy h2 {
-        font-size: 1.72rem;
-    }
-
-    .livro-kicker {
-        font-size: 0.75rem;
-    }
-
-    .navegacao label {
-        width: 15px;
-        height: 4px;
-    }
-
-    .grid-galeria img {
-        height: 200px;
+    .stats-bar__number {
+        font-size: 1.5rem;
     }
 }

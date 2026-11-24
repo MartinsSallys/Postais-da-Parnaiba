@@ -1,76 +1,54 @@
+/* Chronicles Section */
 .chronicles-home {
-    padding: 96px 5% 92px;
-    background:linear-gradient(180deg, rgba(247, 241, 233, 0.98) 0%, rgba(234, 226, 214, 0.94) 100%);
+    padding: var(--spacing-4xl) 5%;
+    background: var(--color-surface);
+    position: relative;
 }
 
-.chronicles-home__intro,
-.chronicles-list__intro {
-    width: min(100%, 720px);
-    margin: 0 auto 38px;
-    text-align: center;
-    color: var(--color-muted);
-    font-size: 1rem;
+.chronicles-home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-border-soft), transparent);
 }
 
-.chronicles-grid,
-.chronicles-list__grid {
+.chronicles-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
 }
 
-.chronicle-card {
-    min-height: 100%;
-}
-
-.chronicle-card .card__image {
+.card--cronica .card__image {
     aspect-ratio: 16 / 10;
-    background: #d8cebf;
+    filter: grayscale(10%) sepia(5%);
 }
 
-.chronicle-card .card__body {
-    gap: 10px;
+.card--cronica .card__body {
+    gap: 8px;
 }
 
-.chronicle-card__author,
-.article-author,
-.article-date,
-.article-location {
-    font-size: 0.92rem;
-    color: var(--color-primary-strong);
-}
-
-.chronicle-card__author {
-    font-style: italic;
-}
-
-.chronicle-card .card__description {
-    margin-bottom: 6px;
-}
-
-.chronicles-home__actions {
-    margin-top: 34px;
-    text-align: center;
-}
-
+/* Chronicles List Page */
 .chronicles-list {
-    padding: 96px 5% 92px;
+    padding: var(--spacing-4xl) 5%;
     background: var(--color-surface);
 }
 
+/* Article Page */
 .article-page {
-    background:
-        linear-gradient(180deg, rgba(245, 240, 231, 0.98) 0%, rgba(227, 220, 209, 0.94) 100%);
+    background: var(--color-surface);
 }
 
 .article-hero {
-    padding: 54px 20px 0;
+    padding: 0 20px;
 }
 
 .article-hero__media {
     width: min(100%, var(--layout-width));
     margin: 0 auto;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     overflow: hidden;
     background: #d7c9b6;
     box-shadow: var(--shadow-strong);
@@ -111,6 +89,8 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    font-size: 0.9rem;
+    color: var(--color-muted);
 }
 
 .article-content {
@@ -121,46 +101,49 @@
     margin-top: 18px;
 }
 
+/* Before/After */
 .before-after {
     margin-bottom: 46px;
 }
 
 .before-after__grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
 .before-after__item {
     padding: 16px;
-    border-radius: var(--radius-md);
-    background: rgba(255, 251, 244, 0.9);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
     border: 1px solid var(--color-border-soft);
-    box-shadow: var(--shadow-medium);
+    box-shadow: var(--shadow-vintage);
 }
 
 .before-after__item img {
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
     margin-bottom: 14px;
 }
 
 .before-after__label {
     display: block;
     margin-bottom: 6px;
-    color: var(--color-primary-strong);
+    color: var(--color-primary-light);
     text-transform: uppercase;
     letter-spacing: 0.14em;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+    font-weight: 600;
 }
 
 .before-after__caption {
     color: var(--color-muted);
-    font-size: 0.94rem;
+    font-size: 0.9rem;
 }
 
+/* Article Share */
 .article-share {
     text-align: center;
 }
@@ -188,9 +171,8 @@
 }
 
 @media (max-width: 1024px) {
-    .chronicles-grid,
-    .chronicles-list__grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .chronicles-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -207,16 +189,15 @@
 @media (max-width: 480px) {
     .chronicles-home,
     .chronicles-list {
-        padding: 72px 15px 68px;
+        padding: var(--spacing-3xl) 15px;
     }
 
-    .chronicles-grid,
-    .chronicles-list__grid {
+    .chronicles-grid {
         grid-template-columns: 1fr;
     }
 
     .article-hero {
-        padding: 28px 15px 0;
+        padding: 0 15px;
     }
 
     .article {

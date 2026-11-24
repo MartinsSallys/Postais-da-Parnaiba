@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Postais da Parnaíba apresenta fotografias, memórias e registros visuais sobre a história e a cultura da cidade.">
-    <title>Postais da Parnaíba</title>
+    <meta name="description" content="Postais da Parnaíba - Museu digital de memória visual, fotografias históricas e registros sobre a história e a cultura da cidade.">
+    <title>Postais da Parnaíba — Museu Digital</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/slider.css">
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/sobrehome.css">
     <link rel="stylesheet" href="css/cards.css">
@@ -19,97 +18,82 @@
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-    <header class="site-header">
-        <h1 class="site-title">
-            <a href="index.html" class="logo">Postais da Parnaíba</a>
-        </h1>
+    <header class="site-header" id="site-header">
+        <div class="site-header__inner">
+            <a href="index.html" class="site-header__logo"><span class="site-header__logo-icon">✦</span>
+                
+                <span class="site-header__logo-text">Postais da Parnaíba</span>
+            </a>
 
-        <nav class="site-nav" aria-label="Navegação principal">
-            <a href="index.html" aria-current="page">Home</a>
-            <a href="pages/galeria.html">Galeria</a>
-            <a href="pages/cronicas.html">Crônicas</a>
-            <a href="pages/livro.html">Livro</a>
-            <a href="pages/blog.html">Blog</a>
-            <a href="pages/sobre.html">Sobre</a>
-        </nav>
+            <button class="site-header__toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="site-nav" id="main-nav" aria-label="Navegação principal">
+                <a href="index.html" aria-current="page">Início</a>
+                <a href="pages/galeria.html">Galeria</a>
+                <a href="pages/blog.html">Blog</a>
+                <a href="pages/livro.html">Livro</a>
+                <a href="pages/sobre.html">Sobre</a>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section class="slider" aria-label="Destaques em imagens de Parnaíba" aria-roledescription="carrossel" aria-describedby="slider-instructions" tabindex="0">
-            <input type="radio" name="slide" id="s1" checked>
-            <input type="radio" name="slide" id="s2">
-            <input type="radio" name="slide" id="s3">
-            <input type="radio" name="slide" id="s4">
-            <input type="radio" name="slide" id="s5">
-            <p id="slider-instructions" class="u-sr-only">Use as setas do teclado para navegar pelos slides e Enter ou espaço para ativar um controle do slider.</p>
-
-            <div class="slides">
-                <article class="slide">
-                    <img src="images/praca-da-graca.jpg" alt="Vista da Praça da Graça em Parnaíba">
-                    <div class="overlay"></div>
-                    <div class="hero-text">
-                        <h2>Memórias visuais de Parnaíba</h2>
-                        <p>Explore paisagens, ruas e monumentos que ajudam a contar a história da cidade em diferentes épocas.</p>
-                        <a href="pages/galeria.html" class="btn btn--primary">Explorar galeria</a>
-                    </div>
-                </article>
-
-                <article class="slide">
-                    <img src="images/centro-historico-cena-urbana.png" alt="Registro histórico de Parnaíba em fotografia antiga">
-                    <div class="overlay"></div>
-                    <div class="hero-text">
-                        <h2>Centro histórico em destaque</h2>
-                        <p>Uma seleção de imagens que preserva fachadas, percursos e lembranças do cotidiano parnaibano.</p>
-                        <a href="pages/galeria.html" class="btn btn--primary">Ver acervo</a>
-                    </div>
-                </article>
-
-                <article class="slide">
-                    <img src="images/centro-historico-arquitetura.png" alt="Vista antiga da cidade de Parnaíba">
-                    <div class="overlay"></div>
-                    <div class="hero-text">
-                        <h2>Arquitetura e memória</h2>
-                        <p>Registros visuais revelam transformações urbanas e o valor simbólico do patrimônio da cidade.</p>
-                        <a href="pages/galeria.html" class="btn btn--primary">Conhecer coleção</a>
-                    </div>
-                </article>
-
-                <article class="slide">
-                    <img src="images/postal-antigo-01.png" alt="Fotografia antiga mostrando arquitetura de Parnaíba">
-                    <div class="overlay"></div>
-                    <div class="hero-text">
-                        <h2>Patrimônio em imagens</h2>
-                        <p>Postais, fotografias e detalhes urbanos reunidos para valorizar a memória afetiva de Parnaíba.</p>
-                        <a href="pages/galeria.html" class="btn btn--primary">Explorar postais</a>
-                    </div>
-                </article>
-
-                <article class="slide">
-                    <img src="images/postal-antigo-02.png" alt="Igreja São Sebastião em cartão-postal antigo de Parnaíba">
-                    <div class="overlay"></div>
-                    <div class="hero-text">
-                        <h2>Um acervo para revisitar a cidade</h2>
-                        <p>Descubra cenas antigas e contemporâneas que aproximam passado, identidade e pertencimento.</p>
-                        <a href="pages/galeria.html" class="btn btn--primary">Abrir galeria</a>
-                    </div>
-                </article>
+        <section class="hero" aria-label="Postais da Parnaíba">
+            <div class="hero__carousel" id="hero-carousel">
+                <div class="hero__slide hero__slide--active" style="background-image: url('images/ParnaibaHero.jpg')"></div>
+                <div class="hero__slide" style="background-image: url('images/ParnaibaHero2.jpg')"></div>
+                <div class="hero__slide" style="background-image: url('images/ParnaibaHero3.jpg')"></div>
             </div>
+            <div class="hero__overlay"></div>
+            <div class="hero__texture"></div>
+            <div class="hero__content">
+                <div class="hero__badge">Museu Digital</div>
+                <h1 class="hero__title">Postais da<br>Parnaíba</h1>
+                <p class="hero__subtitle">Uma jornada visual pela memória afetiva,<br>arquitetura e identidade da cidade.</p>
+                <div class="hero__actions">
+                    <a href="pages/galeria.html" class="btn btn--hero">Explorar Acervo</a>
+                    <a href="#historia" class="btn btn--hero-outline">Nossa História</a>
+                </div>
+                <div class="hero__scroll-hint" aria-hidden="true">
+                    <span>Descubra</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3v14M4 11l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+            </div>
+            <div class="hero__dots" id="hero-dots" aria-hidden="true"></div>
+        </section>
 
-            <div class="navegacao" role="group" aria-label="Controles do slider">
-                <label for="s1" class="slider__dot" tabindex="0" role="button" aria-label="Ir para o slide 1"></label>
-                <label for="s2" class="slider__dot" tabindex="0" role="button" aria-label="Ir para o slide 2"></label>
-                <label for="s3" class="slider__dot" tabindex="0" role="button" aria-label="Ir para o slide 3"></label>
-                <label for="s4" class="slider__dot" tabindex="0" role="button" aria-label="Ir para o slide 4"></label>
-                <label for="s5" class="slider__dot" tabindex="0" role="button" aria-label="Ir para o slide 5"></label>
+        <section class="stats-bar" aria-label="Números do acervo">
+            <div class="container">
+                <div class="stats-bar__grid">
+                    <div class="stats-bar__item">
+                        <span class="stats-bar__number" data-count="700">700+</span>
+                        <span class="stats-bar__label">Fotografias</span>
+                    </div>
+                    <div class="stats-bar__divider"></div>
+                    <div class="stats-bar__item">
+                        <span class="stats-bar__number" data-count="100">100+</span>
+                        <span class="stats-bar__label">Anos de História</span>
+                    </div>
+                    <div class="stats-bar__divider"></div>
+                    <div class="stats-bar__item">
+                        <span class="stats-bar__number" data-count="50">50+</span>
+                        <span class="stats-bar__label">Locais Icônicos</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="historia" aria-labelledby="historia-title">
+        <section class="historia" id="historia" aria-labelledby="historia-title">
             <div class="container">
-                <h2 id="historia-title" class="section-title">Memórias de Parnaíba: uma jornada visual</h2>
-                <div class="linha"></div>
+                <div class="section-header" data-reveal>
+                    <span class="section-header__kicker">Sobre o Projeto</span>
+                    <h2 id="historia-title" class="section-header__title">Memórias de Parnaíba</h2>
+                    <div class="section-header__divider"></div>
+                </div>
 
-                <div class="sobre-grid">
+                <div class="sobre-grid" data-reveal>
                     <div class="texto">
                         <p class="destaque">
                             Nosso passeio começa a partir de uma pesquisa histórica minuciosa, que reuniu mais de 700 fotografias antigas da cidade de Parnaíba, além de mapas, pinturas e cartões-postais provenientes de diversos acervos institucionais e pessoais.
@@ -120,7 +104,10 @@
                     </div>
 
                     <div class="imagem">
-                        <img src="images/rua-duque-de-caxias.jpeg" alt="Rua Duque de Caxias em registro histórico de Parnaíba" loading="lazy">
+                        <div class="imagem__frame">
+                            <img src="images/rua-duque-de-caxias.jpeg" alt="Rua Duque de Caxias em registro histórico de Parnaíba" loading="lazy">
+                        </div>
+                        <span class="imagem__caption">Rua Duque de Caxias — acervo histórico</span>
                     </div>
                 </div>
             </div>
@@ -128,138 +115,185 @@
 
         <section class="postais-home" aria-labelledby="postais-title">
             <div class="container">
-                <h2 id="postais-title" class="section-title">Postais da Parnaíba</h2>
-                <div class="linha"></div>
-                <p class="postais-intro">
-                    Uma seleção de lugares marcantes reunidos em cartões e fotografias que ajudam a contar a história visual da cidade.
-                </p>
+                <div class="section-header" data-reveal>
+                    <span class="section-header__kicker">Acervo Visual</span>
+                    <h2 id="postais-title" class="section-header__title">Postais da Parnaíba</h2>
+                    <div class="section-header__divider"></div>
+                    <p class="section-header__desc">Uma seleção de lugares marcantes reunidos em cartões e fotografias que ajudam a contar a história visual da cidade.</p>
+                </div>
 
-                <div class="postal-grid">
-                    <article class="card card--postal postal-card">
-                        <a href="pages/postal-antigo.html" class="card__media postal-card-media">
-                            <img src="images/postal-antigo-01.png" alt="Postal antigo com vista urbana de Parnaíba" loading="lazy" class="card__image">
-                        </a>
-                        <div class="card__body postal-card-content">
-                            <h3 class="card__title"><a href="pages/postal-antigo.html" class="card__title-link postal-card-title">Postal Antigo</a></h3>
-                            <p class="card__description">Parnaíba, década de 1950</p>
-                            <a href="pages/postal-antigo.html" class="btn btn--primary postal-card-link">Ver mais</a>
-                        </div>
-                    </article>
+                <div class="postal-grid" id="home-postais" data-reveal>
+                    <p class="loading-spinner">Carregando postais...</p>
+                </div>
 
-                    <article class="card card--postal postal-card">
-                        <a href="pages/postais/igreja-sao-sebastiao.html" class="card__media postal-card-media">
-                            <img src="images/postal-antigo-02.png" alt="Igreja São Sebastião em postal histórico" loading="lazy" class="card__image">
-                        </a>
-                        <div class="card__body postal-card-content">
-                            <h3 class="card__title"><a href="pages/postais/igreja-sao-sebastiao.html" class="card__title-link postal-card-title">Igreja São Sebastião</a></h3>
-                            <p class="card__description">Parnaíba, primeira metade do século XX</p>
-                            <a href="pages/postais/igreja-sao-sebastiao.html" class="btn btn--primary postal-card-link">Ver mais</a>
-                        </div>
-                    </article>
-
-                    <article class="card card--postal postal-card">
-                        <a href="pages/centro-historico.html" class="card__media postal-card-media">
-                            <img src="images/centro-historico-cena-urbana.png" alt="Registro do centro histórico de Parnaíba" loading="lazy" class="card__image">
-                        </a>
-                        <div class="card__body postal-card-content">
-                            <h3 class="card__title"><a href="pages/centro-historico.html" class="card__title-link postal-card-title">Centro Histórico</a></h3>
-                            <p class="card__description">Parnaíba, primeiras décadas do século XX</p>
-                            <a href="pages/centro-historico.html" class="btn btn--primary postal-card-link">Ver mais</a>
-                        </div>
-                    </article>
-
-                    <article class="card card--postal postal-card">
-                        <a href="pages/porto-das-barcas.html" class="card__media postal-card-media">
-                            <img src="images/porto-das-barcas.png" alt="Porto das Barcas e Alfândega de Parnaíba" loading="lazy" class="card__image">
-                        </a>
-                        <div class="card__body postal-card-content">
-                            <h3 class="card__title"><a href="pages/porto-das-barcas.html" class="card__title-link postal-card-title">Porto das Barcas</a></h3>
-                            <p class="card__description">Parnaíba, anos 1940</p>
-                            <a href="pages/porto-das-barcas.html" class="btn btn--primary postal-card-link">Ver mais</a>
-                        </div>
-                    </article>
-
-                    <article class="card card--postal postal-card">
-                        <a href="pages/mercado-publico.html" class="card__media postal-card-media">
-                            <img src="images/santa-casa-misericordia.png" alt="Vista histórica de edifício ligado à vida urbana de Parnaíba" loading="lazy" class="card__image">
-                        </a>
-                        <div class="card__body postal-card-content">
-                            <h3 class="card__title"><a href="pages/mercado-publico.html" class="card__title-link postal-card-title">Santa Casa</a></h3>
-                            <p class="card__description">Parnaíba, cuidado e acolhimento histórico</p>
-                            <a href="pages/mercado-publico.html" class="btn btn--primary postal-card-link">Ver mais</a>
-                        </div>
-                    </article>
-
-                    <article class="card card--postal postal-card">
-                        <a href="pages/delta-do-parnaiba.html" class="card__media postal-card-media">
-                            <img src="images/delta-do-parnaiba.png" alt="Cena histórica ligada ao Delta do Parnaíba" loading="lazy" class="card__image">
-                        </a>
-                        <div class="card__body postal-card-content">
-                            <h3 class="card__title"><a href="pages/delta-do-parnaiba.html" class="card__title-link postal-card-title">Delta do Parnaíba</a></h3>
-                            <p class="card__description">Paisagem, rio e cotidiano tradicional</p>
-                            <a href="pages/delta-do-parnaiba.html" class="btn btn--primary postal-card-link">Ver mais</a>
-                        </div>
-                    </article>
+                <div class="section-footer" data-reveal>
+                    <a href="pages/galeria.html" class="btn btn--outline">Ver todo o acervo</a>
                 </div>
             </div>
         </section>
 
         <section class="chronicles-home" aria-labelledby="chronicles-title">
             <div class="container">
-                <h2 id="chronicles-title" class="section-title">Crônicas da Parnaíba</h2>
-                <div class="linha"></div>
-                <p class="chronicles-home__intro">Histórias, memórias e postais antigos da cidade apresentados em formato editorial, com imagens históricas e novas leituras sobre o patrimônio local.</p>
-
-                <div class="chronicles-grid">
-                    <article class="card chronicle-card article-card">
-                        <a href="pages/cronicas/cronica-mercado.html" class="card__media">
-                            <img src="images/santa-casa-misericordia.png" alt="Imagem histórica ligada ao antigo mercado de Parnaíba" loading="lazy" class="card__image">
-                        </a>
-                        <div class="card__body">
-                            <h3 class="card__title"><a href="pages/cronicas/cronica-mercado.html" class="card__title-link">O Antigo Mercado de Parnaíba</a></h3>
-                            <p class="chronicle-card__author">Por: Jota</p>
-                            <p class="card__description">Uma crônica sobre comércio, encontros e a memória popular que atravessa as ruas do centro histórico.</p>
-                            <a href="pages/cronicas/cronica-mercado.html" class="btn btn--primary">Ler história</a>
-                        </div>
-                    </article>
-
-                    <article class="card chronicle-card article-card">
-                        <a href="pages/cronicas/cronica-centro.html" class="card__media">
-                            <img src="images/centro-historico-cena-urbana.png" alt="Vista histórica do centro de Parnaíba" loading="lazy" class="card__image">
-                        </a>
-                        <div class="card__body">
-                            <h3 class="card__title"><a href="pages/cronicas/cronica-centro.html" class="card__title-link">Ruas que Guardam o Centro</a></h3>
-                            <p class="chronicle-card__author">Por: Jota</p>
-                            <p class="card__description">Uma leitura afetiva sobre fachadas, deslocamentos e permanências no coração urbano da cidade.</p>
-                            <a href="pages/cronicas/cronica-centro.html" class="btn btn--primary">Ler história</a>
-                        </div>
-                    </article>
-
-                    <article class="card chronicle-card article-card">
-                        <a href="pages/cronicas.html" class="card__media">
-                            <img src="images/porto-das-barcas.png" alt="Porto das Barcas em imagem histórica" loading="lazy" class="card__image">
-                        </a>
-                        <div class="card__body">
-                            <h3 class="card__title"><a href="pages/cronicas.html" class="card__title-link">Mais histórias em breve</a></h3>
-                            <p class="chronicle-card__author">Por: Autor convidado</p>
-                            <p class="card__description">A nova área editorial foi preparada para receber futuras crônicas, imagens comparativas e publicações vindas de backend.</p>
-                            <a href="pages/cronicas.html" class="btn btn--secondary">Ver acervo editorial</a>
-                        </div>
-                    </article>
+                <div class="section-header" data-reveal>
+                    <span class="section-header__kicker">Leituras</span>
+                    <h2 id="chronicles-title" class="section-header__title">Textos da Parnaíba</h2>
+                    <div class="section-header__divider"></div>
+                    <p class="section-header__desc">Histórias, memórias e postais antigos da cidade apresentados em formato editorial, com imagens históricas e novas leituras sobre o patrimônio local.</p>
                 </div>
 
-                <div class="chronicles-home__actions">
-                    <a href="pages/cronicas.html" class="btn btn--primary">Explorar crônicas</a>
+                <div class="chronicles-grid" id="home-posts" data-reveal>
+                    <p class="loading-spinner">Carregando textos...</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section" aria-label="Chamada para ação">
+            <div class="container">
+                <div class="cta-card" data-reveal>
+                    <div class="cta-card__texture"></div>
+                    <h2>Preserve a Memória</h2>
+                    <p>Cada fotografia conta uma história. Cada postal preserva um pedaço da identidade parnaibana. Contribua para manter viva a memória da nossa cidade.</p>
+                    <a href="pages/sobre.html" class="btn btn--hero">Conheça o Projeto</a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
-        <p>© 2026 Postais da Parnaíba</p>
-        <p>Desenvolvido por Sallys Martins</p>
+        <div class="site-footer__inner">
+            <div class="site-footer__brand">
+                <span class="site-footer__logo">✦ Postais da Parnaíba</span>
+                <p>Museu digital de memória visual da cidade de Parnaíba.</p>
+            </div>
+            <div class="site-footer__links">
+                <a href="pages/galeria.html">Galeria</a>
+                <a href="pages/livro.html">Livro</a>
+                <a href="pages/sobre.html">Sobre</a>
+            </div>
+            <div class="site-footer__bottom">
+                <p>© 2026 Postais da Parnaíba — Desenvolvido por Sallys Martins</p>
+            </div>
+        </div>
     </footer>
 
-    <script src="js/slider.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+    (function() {
+        const carousel = document.getElementById("hero-carousel");
+        const dotsContainer = document.getElementById("hero-dots");
+        if (!carousel) return;
+
+        const slides = carousel.querySelectorAll(".hero__slide");
+        if (slides.length <= 1) return;
+
+        let current = 0;
+        const interval = 5000;
+
+        // Create dots
+        slides.forEach((_, i) => {
+            const dot = document.createElement("button");
+            dot.className = "hero__dot" + (i === 0 ? " hero__dot--active" : "");
+            dot.setAttribute("aria-label", "Slide " + (i + 1));
+            dot.addEventListener("click", () => goTo(i));
+            dotsContainer.appendChild(dot);
+        });
+
+        function goTo(index) {
+            slides[current].classList.remove("hero__slide--active");
+            dotsContainer.children[current].classList.remove("hero__dot--active");
+            current = index;
+            slides[current].classList.add("hero__slide--active");
+            dotsContainer.children[current].classList.add("hero__dot--active");
+        }
+
+        function next() {
+            goTo((current + 1) % slides.length);
+        }
+
+        setInterval(next, interval);
+    })();
+    </script>
+    <script>
+    (async function() {
+        const API_BASE = window.API_BASE_URL || window.__API_BASE__ || "/api";
+        const postaisGrid = document.getElementById("home-postais");
+        const postsGrid = document.getElementById("home-posts");
+
+        function escapeHtml(str) {
+            if (!str) return "";
+            const div = document.createElement("div");
+            div.appendChild(document.createTextNode(str));
+            return div.innerHTML;
+        }
+
+        function getImageUrl(imagemUrl, base) {
+            if (!imagemUrl) return (base || ".") + "/images/postal-antigo-01.png";
+            if (imagemUrl.startsWith("http")) return imagemUrl;
+            if (imagemUrl.startsWith("/images/")) return (base || ".") + imagemUrl;
+            if (imagemUrl.startsWith("/static/")) return imagemUrl;
+            return imagemUrl;
+        }
+
+        function renderPostalCard(postal, base) {
+            const imgUrl = getImageUrl(postal.imagem_url, base);
+            return `
+            <article class="card card--postal">
+                <a href="pages/postal.html?id=${postal.id}" class="card__media">
+                    <img src="${imgUrl}" alt="${escapeHtml(postal.titulo)}" loading="lazy" class="card__image">
+                </a>
+                <div class="card__body">
+                    <span class="card__tag">${escapeHtml(postal.epoca || "")}</span>
+                    <h3 class="card__title"><a href="pages/postal.html?id=${postal.id}" class="card__title-link">${escapeHtml(postal.titulo)}</a></h3>
+                    <p class="card__description">${escapeHtml(postal.localizacao || "")}</p>
+                </div>
+            </article>`;
+        }
+
+        function renderPostCard(post, base) {
+            const imgUrl = getImageUrl(post.imagem_capa_url, base);
+            const link = (base || ".") + "/pages/post.html?slug=" + post.slug;
+            return `
+            <article class="card card--cronica">
+                <a href="${link}" class="card__media">
+                    <img src="${imgUrl}" alt="${escapeHtml(post.titulo)}" loading="lazy" class="card__image">
+                </a>
+                <div class="card__body">
+                    ${post.autor ? `<span class="card__author">Por ${escapeHtml(post.autor)}</span>` : ""}
+                    <h3 class="card__title"><a href="${link}" class="card__title-link">${escapeHtml(post.titulo)}</a></h3>
+                    <p class="card__description">${escapeHtml(post.resumo || post.subtitulo || "")}</p>
+                    <a href="${link}" class="card__action">Ler história →</a>
+                </div>
+            </article>`;
+        }
+
+        if (postaisGrid) {
+            try {
+                const data = await fetch(API_BASE + "/postais?size=6").then(r => r.json());
+                const postais = data.items || [];
+                if (postais.length) {
+                    postaisGrid.innerHTML = postais.map(p => renderPostalCard(p, ".")).join("");
+                } else {
+                    postaisGrid.innerHTML = '<p class="empty-state">Nenhum postal cadastrado ainda.</p>';
+                }
+            } catch (e) {
+                postaisGrid.innerHTML = '<p class="empty-state">Nenhum postal encontrado.</p>';
+            }
+        }
+
+        if (postsGrid) {
+            try {
+                const data2 = await fetch(API_BASE + "/posts?publicados_only=true&size=3").then(r => r.json());
+                const posts = data2.items || [];
+                if (posts.length) {
+                    postsGrid.innerHTML = posts.map(c => renderPostCard(c, ".")).join("");
+                } else {
+                    postsGrid.innerHTML = '<p class="empty-state">Nenhum texto publicado ainda.</p>';
+                }
+            } catch (e) {
+                postsGrid.innerHTML = '<p class="empty-state">Nenhum texto encontrado.</p>';
+            }
+        }
+    })();
+    </script>
 </body>
 </html>

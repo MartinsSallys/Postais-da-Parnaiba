@@ -1,39 +1,42 @@
+/* Postal Grid on Homepage */
 .postais-home {
-    padding: 104px 5% 92px;
+    padding: var(--spacing-4xl) 5%;
     background: var(--color-bg);
+    position: relative;
 }
 
-.postais-intro,
-.galeria-intro {
-    width: min(100%, 700px);
-    margin: 0 auto 36px;
-    text-align: center;
-    color: var(--color-muted);
-    font-size: 1.02rem;
+.postais-home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-border-soft), transparent);
 }
 
 .postal-grid {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 24px;
     align-items: stretch;
 }
 
-.postal-card-media {
-    display: block;
-}
-
-.postal-card-link {
-    margin-top: auto;
-}
-
 .card--postal .card__image {
-    aspect-ratio: 4 / 3;
-    background: #d9d0c2;
+    aspect-ratio: 1;
+    filter: grayscale(20%) sepia(5%);
 }
 
 .card--postal .card__body {
     align-items: center;
-    gap: 10px;
     text-align: center;
+    gap: 4px;
+}
+
+.card--postal .card__title {
+    font-size: 1rem;
+}
+
+.card--postal .card__description {
+    font-size: 0.85rem;
 }

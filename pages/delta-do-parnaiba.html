@@ -7,7 +7,7 @@
     <title>Delta do Parnaíba | Postais da Parnaíba</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/hero.css">
@@ -16,17 +16,25 @@
     <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body>
-    <header class="site-header">
-        <h1 class="site-title">
-            <a href="../index.html" class="logo">Postais da Parnaíba</a>
-        </h1>
-        <nav class="site-nav" aria-label="Navegação principal">
-            <a href="../index.html">Home</a>
-            <a href="galeria.html">Galeria</a>
-            <a href="livro.html">Livro</a>
-            <a href="blog.html">Blog</a>
-            <a href="sobre.html">Sobre</a>
-        </nav>
+    <header class="site-header" id="site-header">
+        <div class="site-header__inner">
+            <a href="../index.html" class="site-header__logo"><span class="site-header__logo-icon">✦</span>
+                
+                <span class="site-header__logo-text">Postais da Parnaíba</span>
+            </a>
+
+            <button class="site-header__toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="site-nav" id="main-nav" aria-label="Navegação principal">
+                <a href="../index.html">Início</a>
+                <a href="galeria.html">Galeria</a>
+                <a href="livro.html">Livro</a>
+                <a href="blog.html">Blog</a>
+                <a href="sobre.html">Sobre</a>
+            </nav>
+        </div>
     </header>
 
     <main class="postal-page">
@@ -88,8 +96,20 @@
     </main>
 
     <footer class="site-footer">
-        <p>© 2026 Postais da Parnaíba</p>
-        <p>Desenvolvido por Sallys Martins</p>
+        <div class="site-footer__inner">
+            <div class="site-footer__brand">
+                <span class="site-footer__logo">✦ Postais da Parnaíba</span>
+                <p>Museu digital de memória visual da cidade de Parnaíba.</p>
+            </div>
+            <div class="site-footer__links">
+                <a href="galeria.html">Galeria</a>
+                <a href="livro.html">Livro</a>
+                <a href="sobre.html">Sobre</a>
+            </div>
+            <div class="site-footer__bottom">
+                <p>© 2026 Postais da Parnaíba — Desenvolvido por Sallys Martins</p>
+            </div>
+        </div>
     </footer>
     <script src="../js/antes-depois.js"></script>
 </body>

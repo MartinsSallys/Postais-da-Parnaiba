@@ -3,35 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Página de venda do livro Postais da Parnaíba, uma obra visual e histórica dedicada à memória da cidade.">
+    <meta name="description" content="Compre o livro Postais da Parnaíba — obra visual e histórica com mais de 700 fotografias raras da cidade. Edição especial de memória e patrimônio.">
     <title>Livro | Postais da Parnaíba</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/hero.css">
     <link rel="stylesheet" href="../css/livro.css">
-    <link rel="stylesheet" href="../css/cronicas.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body>
-    <header class="site-header">
-        <h1 class="site-title">
-            <a href="../index.html" class="logo">Postais da Parnaíba</a>
-        </h1>
-        <nav class="site-nav" aria-label="Navegação principal">
-            <a href="../index.html">Home</a>
-            <a href="galeria.html">Galeria</a>
-            <a href="cronicas.html">Crônicas</a>
-            <a href="livro.html" aria-current="page">Livro</a>
-            <a href="blog.html">Blog</a>
-            <a href="sobre.html">Sobre</a>
-        </nav>
+    <header class="site-header" id="site-header">
+        <div class="site-header__inner">
+            <a href="../index.html" class="site-header__logo"><span class="site-header__logo-icon">✦</span>
+                
+                <span class="site-header__logo-text">Postais da Parnaíba</span>
+            </a>
+
+            <button class="site-header__toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="site-nav" id="main-nav" aria-label="Navegação principal">
+                <a href="../index.html">Início</a>
+                <a href="galeria.html">Galeria</a>
+                <a href="livro.html" aria-current="page">Livro</a>
+                <a href="blog.html">Blog</a>
+                <a href="sobre.html">Sobre</a>
+            </nav>
+        </div>
     </header>
 
     <main class="livro-page">
+        <!-- HERO / PRODUCT -->
         <section class="livro-hero" aria-labelledby="livro-hero-title">
             <div class="container-livro livro-hero-grid">
                 <div class="livro-hero-media">
@@ -39,21 +45,70 @@
                         <img class="livro-cover livro-cover-main" src="../images/livro-capa.jpeg" alt="Capa do livro Postais da Parnaíba">
                         <img class="livro-cover livro-cover-secondary" src="../images/livro-capa2.jpeg" alt="Variação da capa do livro Postais da Parnaíba">
                     </div>
+                    <div class="livro-gallery-thumbs">
+                        <button class="livro-thumb is-active" type="button" aria-label="Capa frontal">
+                            <img src="../images/livro-capa.jpeg" alt="">
+                        </button>
+                        <button class="livro-thumb" type="button" aria-label="Capa traseira">
+                            <img src="../images/livro-capa2.jpeg" alt="">
+                        </button>
+
+                    </div>
                 </div>
 
                 <div class="livro-hero-copy">
-                    <p class="livro-kicker">Edição especial</p>
-                    <h2 id="livro-hero-title">Postais da Parnaíba</h2>
+                    <p class="livro-kicker">Edição especial · 2026</p>
+                    <h1 id="livro-hero-title">Postais da Parnaíba</h1>
                     <p class="livro-subtitle">Um livro para revisitar a cidade por meio de fotografias raras, memórias afetivas e registros históricos.</p>
-                    <p class="livro-lead">A obra reúne pesquisa, sensibilidade e patrimônio visual em uma edição pensada para leitores, pesquisadores e admiradores da história de Parnaíba.</p>
-                    <div class="livro-actions">
-                        <a href="#" class="btn btn--primary">Comprar agora</a>
-                        <a href="#sobre-livro" class="btn btn--secondary livro-btn-secondary">Saiba mais</a>
+
+                    <div class="livro-price-block">
+                        <span class="livro-price-old">R$ 129,00</span>
+                        <span class="livro-price-current">R$ 89,00</span>
+                        <span class="livro-price-installment">ou 3x de R$ 29,67 sem juros</span>
+                    </div>
+
+                    <div class="livro-format-select">
+                        <span class="livro-format-label">Formato</span>
+                        <div class="livro-format-options">
+                            <button class="livro-format-btn is-active" type="button" data-format="capa-dura">Capa Dura</button>
+                            <button class="livro-format-btn" type="button" data-format="capa-blanda">Capa Blanda</button>
+                        </div>
+                    </div>
+
+                    <div class="livro-buy-actions">
+                        <a href="https://wa.me/5586999999999?text=Olá!%20Gostaria%20de%20comprar%20o%20livro%20Postais%20da%20Parnaíba" class="btn btn--primary livro-buy-btn" target="_blank" rel="noopener">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                            Comprar agora
+                        </a>
+                        <a href="#sobre-livro" class="btn btn--outline">Saiba mais</a>
+                    </div>
+
+                    <div class="livro-trust">
+                        <div class="livro-trust-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            <span>Compra segura</span>
+                        </div>
+                        <div class="livro-trust-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16,8 20,8 23,11 23,16 16,16"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                            <span>Envio para todo o Brasil</span>
+                        </div>
+                        <div class="livro-trust-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20,12 20,22 4,22 4,12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/></svg>
+                            <span>Embalagem reforçada</span>
+                        </div>
+                    </div>
+
+                    <div class="livro-specs-mini">
+                        <div class="livro-spec-mini"><strong>Páginas:</strong> 280</div>
+                        <div class="livro-spec-mini"><strong>Idioma:</strong> Português</div>
+                        <div class="livro-spec-mini"><strong>ISBN:</strong> 978-65-00-00000-0</div>
+                        <div class="livro-spec-mini"><strong>Peso:</strong> 850g</div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- SOBRE -->
         <section id="sobre-livro" class="livro-section livro-section-sobre" aria-labelledby="sobre-livro-title">
             <div class="container-livro livro-section-grid">
                 <div class="livro-copy-block">
@@ -75,6 +130,47 @@
             </div>
         </section>
 
+        <!-- ESPECIFICAÇÕES -->
+        <section class="livro-section livro-specs" aria-labelledby="specs-title">
+            <div class="container-livro">
+                <h2 id="specs-title" class="section-title">Especificações</h2>
+                <div class="linha-livro"></div>
+                <div class="livro-specs-grid">
+                    <div class="livro-spec-card">
+                        <div class="livro-spec-card__icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        </div>
+                        <h3>Capa Dura</h3>
+                        <p>Acabamento premium com estampa em relevo e acabamento fosco.</p>
+                        <span class="livro-spec-price">R$ 89,00</span>
+                    </div>
+                    <div class="livro-spec-card">
+                        <div class="livro-spec-card__icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="11" x2="13" y2="11"/></svg>
+                        </div>
+                        <h3>Capa Blanda</h3>
+                        <p>Edição econômica com a mesma qualidade de conteúdo e impressão.</p>
+                        <span class="livro-spec-price">R$ 99,00</span>
+                    </div>
+                    <div class="livro-spec-card">
+                        <div class="livro-spec-card__icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                        </div>
+                        <h3>280 páginas</h3>
+                        <p>Papel couché de alta gramatura, cores fiéis e acabamento cuidadoso.</p>
+                    </div>
+                    <div class="livro-spec-card">
+                        <div class="livro-spec-card__icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <h3>+700 imagens</h3>
+                        <p>Fotografias raras, cartões-postais e documentos de acervos institucionais.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DESTAQUES -->
         <section class="livro-section livro-highlights" aria-labelledby="destaques-title">
             <div class="container-livro">
                 <h2 id="destaques-title" class="section-title">Destaques</h2>
@@ -100,6 +196,7 @@
             </div>
         </section>
 
+        <!-- PREVIEW -->
         <section class="livro-section livro-preview" aria-labelledby="preview-title">
             <div class="container-livro">
                 <h2 id="preview-title" class="section-title">Preview</h2>
@@ -107,11 +204,11 @@
                 <div class="livro-preview-grid">
                     <img src="../images/livro-capa.jpeg" alt="Capa do livro em destaque" loading="lazy">
                     <img src="../images/livro-capa2.jpeg" alt="Segunda visualização da capa do livro" loading="lazy">
-                    <img src="../images/porto-das-barcas.png" alt="Imagem de referência do acervo visual do livro" loading="lazy">
                 </div>
             </div>
         </section>
 
+        <!-- AUTOR -->
         <section class="livro-section livro-author" aria-labelledby="autor-livro-title">
             <div class="container-livro livro-author-grid">
                 <div class="livro-author-media">
@@ -140,21 +237,40 @@
             </div>
         </section>
 
+        <!-- CTA FINAL -->
         <section class="livro-section livro-cta" aria-labelledby="cta-title">
             <div class="container-livro livro-cta-box">
                 <h2 id="cta-title">Garanta seu exemplar</h2>
                 <p>Uma publicação pensada para quem valoriza memória, patrimônio e a beleza histórica de Parnaíba.</p>
+                <div class="livro-price-block livro-price-center">
+                    <span class="livro-price-current">R$ 89,00</span>
+                    <span class="livro-price-installment">ou 3x de R$ 29,67 sem juros</span>
+                </div>
                 <div class="livro-actions livro-actions-center">
-                    <a href="#" class="btn btn--primary">Comprar agora</a>
-                    <a href="sobre.html" class="btn btn--secondary livro-btn-secondary">Saiba mais</a>
+                    <a href="https://wa.me/5586999999999?text=Olá!%20Gostaria%20de%20comprar%20o%20livro%20Postais%20da%20Parnaíba" class="btn btn--primary livro-buy-btn" target="_blank" rel="noopener">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                        Comprar agora
+                    </a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
-        <p>© 2026 Postais da Parnaíba</p>
-        <p>Desenvolvido por Sallys Martins</p>
+        <div class="site-footer__inner">
+            <div class="site-footer__brand">
+                <span class="site-footer__logo">✦ Postais da Parnaíba</span>
+                <p>Museu digital de memória visual da cidade de Parnaíba.</p>
+            </div>
+            <div class="site-footer__links">
+                <a href="galeria.html">Galeria</a>
+                <a href="livro.html">Livro</a>
+                <a href="sobre.html">Sobre</a>
+            </div>
+            <div class="site-footer__bottom">
+                <p>© 2026 Postais da Parnaíba — Desenvolvido por Sallys Martins</p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

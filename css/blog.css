@@ -1,7 +1,7 @@
+/* Blog Page */
 .blog {
-    padding: 120px 20px;
+    padding: var(--spacing-4xl) 20px;
     background: var(--color-surface);
-    animation: fadeUp 1s ease;
 }
 
 .container-blog {
@@ -10,7 +10,7 @@
 
 .grid-blog {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-top: 40px;
 }
@@ -26,4 +26,10 @@
 
 .card--post .card__body {
     gap: 12px;
+}
+
+@media (max-width: 768px) {
+    .grid-blog {
+        grid-template-columns: 1fr;
+    }
 }
