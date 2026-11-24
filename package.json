@@ -1,0 +1,16 @@
+{
+  "name": "postais-da-parnaiba-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Testes automatizados do frontend estatico (HTML/CSS/JS) do Postais da Parnaiba",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui"
+  },
+  "devDependencies": {
+    "jsdom": "^26.1.0",
+    "vitest": "^3.2.4"
+  }
+}

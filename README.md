@@ -216,6 +216,26 @@ Exemplos de campos já refletidos na estrutura:
 
 Projeto autoral sobre história, memória e cultura de Parnaíba.
 
+## Testes automatizados
+
+O frontend possui testes unitários e de integridade com [Vitest](https://vitest.dev/) + [jsdom](https://github.com/jsdom/jsdom).
+
+```bash
+npm install   # instala as dependências de desenvolvimento
+npm test      # roda a suíte (modo CI)
+npm run test:watch
+```
+
+Cobertura atual:
+
+- `tests/public.test.js` — escaping de HTML/XSS, URLs de imagem, parâmetros de URL, renderização de cards e `fetchJson`;
+- `tests/galeria.test.js` — filtros por década, renderização, estados de erro/vazio e linha do tempo;
+- `tests/galeria-filters.test.js` — busca com debounce, filtros por local, década e ordenação;
+- `tests/main.test.js` — menu mobile, header no scroll e reveal;
+- `tests/static.test.js` — links/imagens/CSS/JS locais existentes e estrutura mínima das páginas.
+
+O workflow `.github/workflows/frontend-tests.yml` roda os testes em cada push/PR.
+
 ## Licença
 
 Projeto autoral para fins educacionais e culturais.

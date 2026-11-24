@@ -12,6 +12,7 @@ Desktop.ini
 
 # Node
 node_modules/
+coverage/
 
 # Python
 __pycache__/
