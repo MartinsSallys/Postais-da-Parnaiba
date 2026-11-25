@@ -22,6 +22,7 @@
         </div>
         <nav class="admin-header__nav" aria-label="Navegacao do administrador">
           <a href="../pages/galeria.html" class="admin-header__link" target="_blank" rel="noopener">Ver Galeria</a>
+          <button id="password-btn" class="admin-header__link" type="button">Alterar Senha</button>
           <button id="logout-btn" class="admin-header__link admin-header__link--exit" type="button">Sair</button>
         </nav>
         <button class="admin-header__toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
@@ -30,6 +31,7 @@
       </div>
       <nav class="admin-header__mobile" aria-label="Menu mobile" hidden>
         <a href="../pages/galeria.html" class="admin-header__mobile-link" target="_blank" rel="noopener">Ver Galeria</a>
+        <button id="password-btn-mobile" class="admin-header__mobile-link" type="button">Alterar Senha</button>
         <button id="logout-btn-mobile" class="admin-header__mobile-link admin-header__mobile-link--exit" type="button">Sair do Acervo</button>
       </nav>
     </header>
@@ -340,6 +342,48 @@
             <button id="cancel-form" class="btn btn--secondary" type="button">Cancelar</button>
             <button class="btn btn--primary" type="submit">
               <span id="submit-text">Salvar Registro</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="password-modal" class="modal is-hidden" aria-hidden="true">
+      <div class="modal-backdrop"></div>
+      <div class="modal-dialog" role="dialog" aria-labelledby="password-modal-title">
+        <div class="modal-header">
+          <div>
+            <h3 id="password-modal-title" class="modal-header__title">Alterar Senha</h3>
+            <p class="modal-header__sub">Defina uma nova senha de acesso ao painel</p>
+          </div>
+          <button id="close-password-modal" class="modal-close" type="button" aria-label="Fechar modal">&times;</button>
+        </div>
+
+        <form id="password-form" class="modal-form">
+          <div class="form-section">
+            <div class="form-field">
+              <label for="password-current" class="form-field__label">Senha Atual</label>
+              <input id="password-current" name="current_password" type="password" class="form-field__input" autocomplete="current-password" required />
+            </div>
+
+            <div class="form-field">
+              <label for="password-new" class="form-field__label">Nova Senha</label>
+              <span class="form-field__hint">Minimo de 8 caracteres</span>
+              <input id="password-new" name="new_password" type="password" class="form-field__input" autocomplete="new-password" minlength="8" required />
+            </div>
+
+            <div class="form-field">
+              <label for="password-confirm" class="form-field__label">Confirmar Nova Senha</label>
+              <input id="password-confirm" name="confirm_password" type="password" class="form-field__input" autocomplete="new-password" minlength="8" required />
+            </div>
+          </div>
+
+          <div id="password-feedback" class="form-feedback" aria-live="polite"></div>
+
+          <div class="modal-actions">
+            <button id="cancel-password" class="btn btn--secondary" type="button">Cancelar</button>
+            <button class="btn btn--primary" type="submit">
+              <span id="password-submit-text">Alterar Senha</span>
             </button>
           </div>
         </form>
