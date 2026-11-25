@@ -802,6 +802,74 @@ function showFeedback(message, isError) {
   }
 }
 
+// === Password Modal ===
+function openPasswordModal() {
+  const modal = document.getElementById("password-modal");
+  const form = document.getElementById("password-form");
+  if (!modal || !form) return;
+
+  form.reset();
+  const feedback = document.getElementById("password-feedback");
+  if (feedback) feedback.textContent = "";
+
+  modal.classList.remove("is-hidden");
+  modal.classList.add("is-visible");
+  modal.setAttribute("aria-hidden", "false");
+  setTimeout(() => document.getElementById("password-current")?.focus(), 100);
+}
+
+function closePasswordModal() {
+  const modal = document.getElementById("password-modal");
+  if (!modal) return;
+
+  modal.classList.remove("is-visible");
+  modal.setAttribute("aria-hidden", "true");
+  setTimeout(() => modal.classList.add("is-hidden"), 300);
+}
+
+function showPasswordFeedback(message, isError) {
+  const feedback = document.getElementById("password-feedback");
+  if (feedback) {
+    feedback.textContent = message;
+    feedback.classList.toggle("is-error", isError);
+  }
+}
+
+async function submitPasswordForm(event) {
+  event.preventDefault();
+  const form = document.getElementById("password-form");
+  const submitText = document.getElementById("password-submit-text");
+  if (!form) return;
+
+  const current = document.getElementById("password-current").value;
+  const next = document.getElementById("password-new").value;
+  const confirm = document.getElementById("password-confirm").value;
+
+  if (next !== confirm) {
+    showPasswordFeedback("As senhas novas nao coincidem.", true);
+    return;
+  }
+
+  const submitBtn = form.querySelector('button[type="submit"]');
+  submitText.textContent = "Salvando...";
+  if (submitBtn) submitBtn.disabled = true;
+
+  try {
+    await request("/auth/change-password", {
+      method: "POST",
+      body: { current_password: current, new_password: next },
+      auth: true,
+    });
+    showToast("Senha alterada com sucesso!", "success");
+    setTimeout(closePasswordModal, 600);
+  } catch (error) {
+    showPasswordFeedback(error.message || "Nao foi possivel alterar a senha.", true);
+  } finally {
+    submitText.textContent = "Alterar Senha";
+    if (submitBtn) submitBtn.disabled = false;
+  }
+}
+
 function toggleScheduledDate(status) {
   const wrapper = document.getElementById("scheduled-date-wrapper");
   if (!wrapper) return;
@@ -852,6 +920,11 @@ function setupKeyboardShortcuts() {
       const modal = document.getElementById("entity-modal");
       if (modal && modal.classList.contains("is-visible")) {
         closeModal();
+        return;
+      }
+      const passwordModal = document.getElementById("password-modal");
+      if (passwordModal && passwordModal.classList.contains("is-visible")) {
+        closePasswordModal();
         return;
       }
     }
@@ -962,6 +1035,18 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".modal-backdrop")?.addEventListener("click", closeModal);
   document.getElementById("entity-form")?.addEventListener("submit", submitForm);
   document.getElementById("field-image")?.addEventListener("change", previewSelectedFile);
+
+  // Password modal
+  document.getElementById("password-btn")?.addEventListener("click", openPasswordModal);
+  document.getElementById("password-btn-mobile")?.addEventListener("click", () => {
+    const mobileNav = document.querySelector(".admin-header__mobile");
+    if (mobileNav) mobileNav.hidden = true;
+    openPasswordModal();
+  });
+  document.getElementById("close-password-modal")?.addEventListener("click", closePasswordModal);
+  document.getElementById("cancel-password")?.addEventListener("click", closePasswordModal);
+  document.querySelector("#password-modal .modal-backdrop")?.addEventListener("click", closePasswordModal);
+  document.getElementById("password-form")?.addEventListener("submit", submitPasswordForm);
 
   // Click actions (edit/delete)
   document.addEventListener("click", async (event) => {
