@@ -6,6 +6,7 @@ node_modules
 .venv
 venv
 tests
+docs
 **/*.test.js
 package.json
 package-lock.json
