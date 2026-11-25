@@ -63,6 +63,7 @@
             </div>
         </div>
     </footer>
+    <script src="../js/config.js"></script>
     <script src="../js/public.js"></script>
     <script>
     (async function() {
@@ -72,6 +73,7 @@
             container.innerHTML = '<p>Artigo não encontrado.</p>';
             return;
         }
+        container.innerHTML = '<p class="empty-state">Carregando artigo...</p>';
         try {
             var post = await fetchJson("/posts/" + slug);
             var imgUrl = getImageUrl(post.imagem_capa_url, "..");
@@ -84,7 +86,14 @@
                 '<div class="post-body">' + (post.conteudo || '') + '</div>' +
                 '</div>';
         } catch (e) {
-            container.innerHTML = '<p>Artigo não encontrado.</p>';
+            if (e && e.status === 404) {
+                container.innerHTML = '<p>Artigo não encontrado.</p>';
+            } else {
+                container.innerHTML =
+                    '<p>Não foi possível carregar o artigo.</p>' +
+                    '<p>O servidor pode estar iniciando; tente novamente em alguns segundos.</p>' +
+                    '<p><button type="button" onclick="location.reload()">Tentar novamente</button></p>';
+            }
         }
     })();
     </script>

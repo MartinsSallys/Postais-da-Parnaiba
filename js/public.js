@@ -14,7 +14,7 @@ function getImageUrl(imagemUrl, base) {
   if (!imagemUrl) return (base || ".") + "/images/postal-antigo-01.png";
   if (imagemUrl.startsWith("http")) return imagemUrl;
   if (imagemUrl.startsWith("/images/")) return (base || ".") + imagemUrl;
-  if (imagemUrl.startsWith("/static/")) return imagemUrl;
+  if (imagemUrl.startsWith("/static/")) return (window.API_ORIGIN || "") + imagemUrl;
   return imagemUrl;
 }
 
@@ -24,7 +24,11 @@ function getQueryParam(name) {
 
 async function fetchJson(path) {
   const res = await fetch(API_BASE + path);
-  if (!res.ok) throw new Error("Erro ao carregar dados.");
+  if (!res.ok) {
+    const error = new Error("Erro ao carregar dados.");
+    error.status = res.status;
+    throw error;
+  }
   return res.json();
 }
 

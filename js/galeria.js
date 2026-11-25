@@ -15,7 +15,7 @@ function getImageUrl(imagemUrl) {
   if (!imagemUrl) return "../images/postal-antigo-01.png";
   if (imagemUrl.startsWith("http")) return imagemUrl;
   if (imagemUrl.startsWith("/images/")) return `..${imagemUrl}`;
-  if (imagemUrl.startsWith("/static/")) return imagemUrl;
+  if (imagemUrl.startsWith("/static/")) return (window.API_ORIGIN || "") + imagemUrl;
   return imagemUrl;
 }
 
@@ -134,6 +134,8 @@ async function loadPostais() {
   const grid = document.getElementById("dynamic-gallery");
   if (!grid) return;
 
+  grid.innerHTML = '<p class="empty-state">Carregando acervo...</p>';
+
   try {
     const res = await fetch(`${API_BASE}/postais?size=50`);
     if (!res.ok) throw new Error("Erro ao carregar postais.");
@@ -148,13 +150,18 @@ async function loadPostais() {
     buildLocationChips();
     applyFilters();
   } catch (error) {
-    grid.innerHTML = '<p class="empty-state">Erro ao carregar postais.</p>';
+    grid.innerHTML =
+      '<p class="empty-state">Erro ao carregar postais.</p>' +
+      '<p class="empty-state">O servidor pode estar iniciando; tente novamente em alguns segundos.</p>' +
+      '<p class="empty-state"><button type="button" onclick="loadPostais()">Tentar novamente</button></p>';
   }
 }
 
 async function loadTimeline() {
   const container = document.getElementById("dynamic-timeline");
   if (!container) return;
+
+  container.innerHTML = '<p class="empty-state">Carregando linha do tempo...</p>';
 
   try {
     const res = await fetch(`${API_BASE}/timeline-events?publicados_only=true&size=50`);
@@ -191,7 +198,10 @@ async function loadTimeline() {
       })
       .join("");
   } catch (error) {
-    container.innerHTML = '<p class="empty-state">Erro ao carregar eventos.</p>';
+    container.innerHTML =
+      '<p class="empty-state">Erro ao carregar eventos.</p>' +
+      '<p class="empty-state">O servidor pode estar iniciando; tente novamente em alguns segundos.</p>' +
+      '<p class="empty-state"><button type="button" onclick="loadTimeline()">Tentar novamente</button></p>';
   }
 }
 
