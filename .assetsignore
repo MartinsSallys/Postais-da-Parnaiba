@@ -1,0 +1,16 @@
+.git
+.github
+.vscode
+.wrangler
+node_modules
+.venv
+venv
+tests
+**/*.test.js
+package.json
+package-lock.json
+vitest.config.js
+wrangler.jsonc
+.assetsignore
+.gitignore
+README.md
