@@ -125,4 +125,5 @@ Cada item da lista tem botões de ação:
 ## 9. Suporte
 
 Em caso de erro, comportamento estranho ou necessidade de recuperar senha,
-procure o responsável técnico pelo projeto.
+contate (86)99576-8239 - Sallys Martins 
+
