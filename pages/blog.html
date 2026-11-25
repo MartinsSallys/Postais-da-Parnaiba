@@ -66,11 +66,13 @@
             </div>
         </div>
     </footer>
+    <script src="../js/config.js"></script>
     <script src="../js/public.js"></script>
     <script>
     (async function() {
         var grid = document.getElementById("blog-grid");
         if (!grid) return;
+        grid.innerHTML = '<p class="empty-state">Carregando artigos...</p>';
         try {
             var data = await fetchJson("/posts?size=50");
             var posts = data.items || [];
@@ -80,7 +82,10 @@
             }
             grid.innerHTML = posts.map(function(p) { return renderPostCard(p, ".."); }).join("");
         } catch (e) {
-            grid.innerHTML = '<p class="empty-state">Erro ao carregar artigos.</p>';
+            grid.innerHTML =
+                '<p class="empty-state">Erro ao carregar artigos.</p>' +
+                '<p class="empty-state">O servidor pode estar iniciando; tente novamente em alguns segundos.</p>' +
+                '<p class="empty-state"><button type="button" onclick="location.reload()">Tentar novamente</button></p>';
         }
     })();
     </script>

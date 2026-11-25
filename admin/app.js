@@ -65,7 +65,14 @@ async function request(path, { method = "GET", body = null, auth = true, parseJs
     }
   }
 
-  const response = await fetch(getApiUrl(path), options);
+  let response;
+  try {
+    response = await fetch(getApiUrl(path), options);
+  } catch {
+    throw new Error(
+      "Nao foi possivel conectar a API. O servidor pode estar iniciando; tente novamente em alguns segundos."
+    );
+  }
 
   if (response.status === 401) {
     clearToken();
@@ -118,7 +125,7 @@ function getImageUrl(value) {
   if (!value) return "";
   if (value.startsWith("http")) return value;
   if (value.startsWith("/images/")) return `${window.location.origin}${value}`;
-  if (value.startsWith("/static/")) return value;
+  if (value.startsWith("/static/")) return `${window.API_ORIGIN || ""}${value}`;
   return `${API_BASE_URL}${value.startsWith("/") ? value : `/${value}`}`;
 }
 

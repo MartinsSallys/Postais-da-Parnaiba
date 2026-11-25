@@ -176,6 +176,7 @@
         </div>
     </footer>
 
+    <script src="js/config.js"></script>
     <script src="js/main.js"></script>
     <script>
     (function() {
@@ -233,7 +234,7 @@
             if (!imagemUrl) return (base || ".") + "/images/postal-antigo-01.png";
             if (imagemUrl.startsWith("http")) return imagemUrl;
             if (imagemUrl.startsWith("/images/")) return (base || ".") + imagemUrl;
-            if (imagemUrl.startsWith("/static/")) return imagemUrl;
+            if (imagemUrl.startsWith("/static/")) return (window.API_ORIGIN || "") + imagemUrl;
             return imagemUrl;
         }
 
@@ -269,7 +270,13 @@
             </article>`;
         }
 
+        const RETRY_HINT =
+            '<p class="empty-state">Nao foi possivel carregar o acervo agora.</p>' +
+            '<p class="empty-state">O servidor pode estar iniciando; tente novamente em alguns segundos.</p>' +
+            '<p class="empty-state"><button type="button" onclick="location.reload()">Tentar novamente</button></p>';
+
         if (postaisGrid) {
+            postaisGrid.innerHTML = '<p class="empty-state">Carregando acervo...</p>';
             try {
                 const data = await fetch(API_BASE + "/postais?size=6").then(r => r.json());
                 const postais = data.items || [];
@@ -279,11 +286,12 @@
                     postaisGrid.innerHTML = '<p class="empty-state">Nenhum postal cadastrado ainda.</p>';
                 }
             } catch (e) {
-                postaisGrid.innerHTML = '<p class="empty-state">Nenhum postal encontrado.</p>';
+                postaisGrid.innerHTML = RETRY_HINT;
             }
         }
 
         if (postsGrid) {
+            postsGrid.innerHTML = '<p class="empty-state">Carregando textos...</p>';
             try {
                 const data2 = await fetch(API_BASE + "/posts?publicados_only=true&size=3").then(r => r.json());
                 const posts = data2.items || [];
@@ -293,7 +301,7 @@
                     postsGrid.innerHTML = '<p class="empty-state">Nenhum texto publicado ainda.</p>';
                 }
             } catch (e) {
-                postsGrid.innerHTML = '<p class="empty-state">Nenhum texto encontrado.</p>';
+                postsGrid.innerHTML = RETRY_HINT;
             }
         }
     })();
