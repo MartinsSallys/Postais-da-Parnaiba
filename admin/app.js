@@ -74,9 +74,10 @@ async function request(path, { method = "GET", body = null, auth = true, parseJs
     );
   }
 
-  if (response.status === 401) {
+  if (response.status === 401 && auth) {
     clearToken();
-    if (window.location.pathname.includes("/admin/") && !window.location.pathname.endsWith("login.html")) {
+    const onLoginPage = /\/login(\.html)?$/.test(window.location.pathname);
+    if (window.location.pathname.includes("/admin/") && !onLoginPage) {
       window.location.href = "login.html";
     }
     throw new Error("Sessao expirada. Faca login novamente.");
